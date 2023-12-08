@@ -1,0 +1,22 @@
+@import url(../dashboard-admin/dashboard-admin.component.css);
+
+.titreDash{
+    color: #308AA7;
+}
+
+.search{
+    display: flex;
+    justify-content: end;
+}
+
+.iconsearch{
+    background-color: #E75761;
+}
+
+.iconsearch i{
+    color: white;
+}
+
+.inputPorteur{
+    border: 1px solid #E75761 !important;
+}

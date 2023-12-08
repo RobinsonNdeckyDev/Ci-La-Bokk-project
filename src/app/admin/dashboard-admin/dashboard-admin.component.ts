@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./dashboard-admin.component.css']
 })
 export class DashboardAdminComponent {
-
+    ngOnInit(): void {
+    const script = document.createElement('script');
+    script.src = '../../../assets/js/script.js'; 
+    document.body.appendChild(script);
+  }
 }

@@ -11,6 +11,7 @@ import { LoginComponent } from './authentification/login/login.component';
 import { AjoutProjetComponent } from './porteur-projet/ajout-projet/ajout-projet.component';
 import { ListeInvestissementsComponent } from './porteur-projet/liste-investissements/liste-investissements.component';
 import { ProfilPorteurComponent } from './porteur-projet/profil-porteur/profil-porteur.component';
+import { DashboardAdminComponent } from './admin/dashboard-admin/dashboard-admin.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/accueil', pathMatch: 'full' }, // Redirection par défaut
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: 'ajout', component: AjoutProjetComponent },
   { path: 'listeporteur', component: ListeInvestissementsComponent },
   { path: 'profilporteur', component: ProfilPorteurComponent },
+  { path: 'dashboard', component: DashboardAdminComponent}
 
 
 

@@ -28,6 +28,8 @@ import { GestionNewslettersComponent } from './admin/gestion-newsletters/gestion
 import { GestionContactsComponent } from './admin/gestion-contacts/gestion-contacts.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ListeInvestissementBailleurComponent } from './bailleur/liste-investissement-bailleur/liste-investissement-bailleur.component';
+import { ListeProjetsBailleurComponent } from './bailleur/liste-projets-bailleur/liste-projets-bailleur.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +56,9 @@ import { HttpClientModule } from '@angular/common/http';
     GestionPorteursComponent,
     GestionBailleursComponent,
     GestionNewslettersComponent,
-    GestionContactsComponent
+    GestionContactsComponent,
+    ListeInvestissementBailleurComponent,
+    ListeProjetsBailleurComponent
   ],
   imports: [
     BrowserModule,

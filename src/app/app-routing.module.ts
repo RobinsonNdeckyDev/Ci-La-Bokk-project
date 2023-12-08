@@ -12,6 +12,9 @@ import { AjoutProjetComponent } from './porteur-projet/ajout-projet/ajout-projet
 import { ListeInvestissementsComponent } from './porteur-projet/liste-investissements/liste-investissements.component';
 import { ProfilPorteurComponent } from './porteur-projet/profil-porteur/profil-porteur.component';
 import { DashboardAdminComponent } from './admin/dashboard-admin/dashboard-admin.component';
+import { ListeInvestissementBailleurComponent } from './bailleur/liste-investissement-bailleur/liste-investissement-bailleur.component';
+import { ListeProjetsBailleurComponent } from './bailleur/liste-projets-bailleur/liste-projets-bailleur.component';
+import { ProfilBailleurComponent } from './bailleur/profil-bailleur/profil-bailleur.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/accueil', pathMatch: 'full' }, // Redirection par défaut
@@ -26,7 +29,13 @@ const routes: Routes = [
   { path: 'ajout', component: AjoutProjetComponent },
   { path: 'listeporteur', component: ListeInvestissementsComponent },
   { path: 'profilporteur', component: ProfilPorteurComponent },
-  { path: 'dashboard', component: DashboardAdminComponent}
+  { path: 'dashboard', component: DashboardAdminComponent},
+  { path: 'dashboardbailleur', component: ListeInvestissementBailleurComponent},
+  { path: 'projetsBailleur', component: ListeProjetsBailleurComponent},
+  { path: 'profilBailleur', component: ProfilBailleurComponent},
+
+
+
 
 
 

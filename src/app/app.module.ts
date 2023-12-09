@@ -14,8 +14,6 @@ import { PolitiqueConfidentialiteComponent } from './pages/politique-confidentia
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './authentification/login/login.component';
-import { ListeProjetsComponent } from './bailleur/liste-projets/liste-projets.component';
-import { ListeInvestissementsComponent } from './bailleur/liste-investissements/liste-investissements.component';
 import { ProfilBailleurComponent } from './bailleur/profil-bailleur/profil-bailleur.component';
 import { ProfilPorteurComponent } from './porteur-projet/profil-porteur/profil-porteur.component';
 import { AjoutProjetComponent } from './porteur-projet/ajout-projet/ajout-projet.component';
@@ -28,6 +26,9 @@ import { GestionNewslettersComponent } from './admin/gestion-newsletters/gestion
 import { GestionContactsComponent } from './admin/gestion-contacts/gestion-contacts.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ListeInvestissementBailleurComponent } from './bailleur/liste-investissement-bailleur/liste-investissement-bailleur.component';
+import { ListeProjetsBailleurComponent } from './bailleur/liste-projets-bailleur/liste-projets-bailleur.component';
+import { InvestissementPorteurComponent } from './porteur-projet/investissement-porteur/investissement-porteur.component';
 
 @NgModule({
   declarations: [
@@ -43,8 +44,6 @@ import { HttpClientModule } from '@angular/common/http';
     HeaderComponent,
     FooterComponent,
     LoginComponent,
-    ListeProjetsComponent,
-    ListeInvestissementsComponent,
     ProfilBailleurComponent,
     ProfilPorteurComponent,
     AjoutProjetComponent,
@@ -54,7 +53,10 @@ import { HttpClientModule } from '@angular/common/http';
     GestionPorteursComponent,
     GestionBailleursComponent,
     GestionNewslettersComponent,
-    GestionContactsComponent
+    GestionContactsComponent,
+    ListeInvestissementBailleurComponent,
+    ListeProjetsBailleurComponent,
+    InvestissementPorteurComponent
   ],
   imports: [
     BrowserModule,

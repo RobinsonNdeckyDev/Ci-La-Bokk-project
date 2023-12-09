@@ -121,21 +121,29 @@
 
 
 
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    Launch demo modal
-</button>
 
 <!-- Modal detail bailleur -->
 <div class="modal fade" id="detailBailleur" tabindex="-1" aria-labelledby="detailBailleurLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="detailBailleurLabel">Modal title</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-header d-flex justify-content-end border-0">
+                <button type="button" class="btn btnCloseBail" data-bs-dismiss="modal"><i class="bi bi-x-lg"></i></button>
             </div>
             <div class="modal-body">
-                ...
+                <div class="headBailleur d-flex">
+                    <div class="profilBailleur">
+                        <div class="rect ret1"></div>
+                            <img class="imgBailleur" src="../../../assets/images/bailleur.jpg" alt="">
+                        <div class="rect rect2"></div>
+                    </div>
+                    <div class="DetailBailleur">
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            Maiores, quia odit. Hic autem praesentium reprehenderit animi recusandae, 
+                            libero dolores provident.
+                        </p>
+                    </div>
+                </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

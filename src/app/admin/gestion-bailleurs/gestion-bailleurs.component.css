@@ -59,5 +59,46 @@
     padding-top: 20px;
 }
 
+.btnCloseBail{
+    background-color: #E75761;
+    border-radius: 50%;
+}
+
+.btnCloseBail i{
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+.imgBailleur{
+    width: 200px;
+    height: 250px;
+    display: block;
+    z-index: 1;
+}
+
+.rect{
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    
+}
+
+.rect1{
+    top: 0;
+    right: 0;
+    background-color: #E75761;
+}
+
+.rect2{
+    bottom: -10px;
+    left: -15px;
+    background-color: #308AA7;
+}
+
+.profilBailleur{
+    position: relative;
+    display: inline-block;
+}
 
 /* Css import */

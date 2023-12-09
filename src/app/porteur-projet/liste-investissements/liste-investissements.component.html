@@ -18,46 +18,47 @@
 
     <!-- SIDEBAR -->
     <section id="sidebar">
-        <a href="#" class="brand">
-            <img src="../../../assets/images/logo.png" alt="" height="80px" class="m-0 m-auto ">
-        </a>
-        <ul class="side-menu top">
-            <li>
-                <a href="#content" >
-                    <i class='bx bxs-dashboard'></i>
-                    <span class="text" routerLink="/ajout">Liste projet</span>
-                </a>
-            </li>
-            <li class="active">
-                <a href="#content">
-                    <i class='bx bxs-shopping-bag-alt'></i>
-                    <span class="text">Investissement</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class='bx bxs-doughnut-chart'></i>
-                    <span class="text">Profil</span>
-                </a>
-            </li>
-            <li>
+    <a href="#" class="brand">
+        <img src="../../../assets/images/logo.png" alt="" height="80px" class="m-0 m-auto ">
+    </a>
+    <hr class="border">
+    <ul class="side-menu top">
+        <li class="active">
+            <a href="#" href="#content" >
+                <i class='bx bxs-dashboard'></i>
+                <span class="text">Liste projet</span>
+            </a>
+        </li>
+        <li>
+            <a href="#content" >
+                <i class='bx bxs-shopping-bag-alt'></i>
+                <span class="text">Investissement</span>
+            </a>
+        </li>
+        <li>
+            <a href="#" href="#content">
+                <i class='bx bxs-doughnut-chart'></i>
+                <span class="text">Profil</span>
+            </a>
+        </li>
+        <li>
 
-            </li>
-            <li>
+        </li>
+        <li>
 
-            </li>
-        </ul>
-        <ul class="side-menu">
-            <li>
+        </li>
+    </ul>
+    <ul class="side-menu">
+        <li>
 
-            </li>
-            <li>
-                <a href="#" class="logout">
-                    <i class='bx bxs-log-out-circle'></i>
-                    <span class="text">Se deconnecter</span>
-                </a>
-            </li>
-        </ul>
+        </li>
+        <li>
+            <a href="#" class="logout">
+                <i class='bx bxs-log-out-circle'></i>
+                <span class="text">Se deconnecter</span>
+            </a>
+        </li>
+    </ul>
     </section>
     <!-- SIDEBAR -->
 
@@ -126,7 +127,7 @@
                                 <td><span class="status completed">2 000 000</span></td>
                                 <td>10/10/2010</td>
                                 <td>Non</td>
-                                <td><a href=""><i class="bi bi-eye text-info fs-4"></i></a></td>
+                                <td><a href="#"  data-bs-toggle="modal" data-bs-target="#modalDetailInvestissement"><i class="bi bi-eye text-info fs-4"></i></a></td>
                             </tr>
                             <tr>
                                 <td>
@@ -137,10 +138,8 @@
                                 <td><span class="status completed">2 000 000</span></td>
                                 <td>10/10/2010</td>
                                 <td>Non</td>
-                                <td><a href=""><i class="bi bi-eye text-info fs-4"></i></a></td>
+                                <td><a href="#"  data-bs-toggle="modal" data-bs-target="#modalDetailInvestissement"><i class="bi bi-eye text-info fs-4"></i></a></td>
                             </tr>
-
-
                         </tbody>
                     </table>
                 </div>
@@ -150,6 +149,38 @@
         <!-- MAIN -->
     </section>
     <!-- CONTENT -->
+
+    <!-- Modal detail -->
+    <div class="modal  modal-lg" tabindex="-1" id="modalDetailInvestissement">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header border-0 ">
+                    <h5 class="modal-title col-12 text-center ">Detail d'un investissement</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="card mb-3">
+                        <div class="row g-0">
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h6 class="fw-bold ">Projet:</h6>
+                                    <h6 class="fw-bold ">Montant:</h6>
+                                    <h6 class="fw-bold ">Date:</h6>
+                                    <h6 class="fw-bold ">Description:</h6>
+                                    <p class="card-text">This is a wider card with supporting text below as a natural
+                                        lead-in to additional
+                                        content. This content is a little bit longer.</p>
+                                    <p class="card-text">
+                                        <button class="btn btn-sup ms-2">Supprimer</button>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

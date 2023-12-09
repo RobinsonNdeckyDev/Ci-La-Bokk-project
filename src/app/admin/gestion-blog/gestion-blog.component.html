@@ -1,1 +1,168 @@
-<p>gestion-blog works!</p>
+<!-- debut du contenu de la page blog dashboard admin -->
+<div>
+    <h3 class="text-center mt-4 fw-bold titremere-blog">Listes des blogs</h3>
+    <div class="d-flex justify-content-between">
+        <button class="btn fw-bold  boutonajouter-blog" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="ajouterArticle()">Ajouter</button>
+        <p><input type="text" class="rounded-start-4 inputrecherchemoi-article" placeholder="  Cherche un article"><button class="rounded-end-4 boutoncherchemoi-article"><i class="bi bi-search"></i></button></p>
+    </div>
+</div>
+<div class="row">
+  <div class="col-lg-6 col-md-12">
+    <div class="card mb-3 carte-blog-admin mt-5 mx-auto rounded rounded-1">
+      <div class="row g-0 blog-row">
+        <div class="col-md-4 p-0 m-0">
+          <img src="../assets/images/bannieres/ban3.jpg " class="img-fluid h-100 w-100 mx-auto rounded-1  " alt="...">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title fw-bold text-center">Agriculture</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer. This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <div>
+              <button class="btn rounded-5 fw-bold me-4 boutondetails-blog" data-bs-target="#examplearticle" data-bs-toggle="modal">Details</button>
+              <button class="btn rounded-5 fw-bold me-4 boutonmodif-blog" data-bs-toggle="modal" data-bs-target="#modifier"> Modfier </button>
+              <button class="btn rounded-5 fw-bold boutonsupprim-blog">Supprimer</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-6 col-md-12">
+    <div class="card mb-3 carte-blog-admin mt-5 mx-auto rounded rounded-1">
+      <div class="row g-0 blog-row">
+        <div class="col-md-4 p-0 m-0">
+          <img src="../assets/images/bannieres/ban3.jpg " class="img-fluid h-100 rounded-1  " alt="...">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title fw-bold text-center">Agriculture</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer. This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <div>
+              <button class="btn rounded-5 fw-bold me-4 boutondetails-blog" data-bs-target="#examplearticle" data-bs-toggle="modal">Details</button>
+              <button class="btn rounded-5 fw-bold me-4 boutonmodif-blog" data-bs-toggle="modal" data-bs-target="#modifier"> Modfier </button>
+              <button class="btn rounded-5 fw-bold boutonsupprim-blog">Supprimer</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- fin du contenu de la page blog dashboard admin -->
+
+<!-- pagination -->
+<div class="pagin d-flex justify-content-center">
+  <nav aria-label="Page navigation example">
+      <ul class="pagination">
+          <li class="page-item">
+              <a class="page-link" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+              </a>
+          </li>
+          <li class="page-item active"><a class="page-link">1</a></li>
+          <li class="page-item"><a class="page-link">2</a></li>
+          <li class="page-item"><a class="page-link">3</a></li>
+          <li class="page-item">
+              <a class="page-link" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+              </a>
+          </li>
+      </ul>
+  </nav>
+</div>
+<!-- pagination -->
+
+<!-- debut modelle d'ajoute d'un article dans le blog --> 
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5 text-center" id="exampleModalLabel">Ajouter un article</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form>
+                <div class="mb-3">
+                  <label for="recipient-name" class="col-form-label ">Titre:</label>
+                  <input type="text" class="form-control" id="titreArticle" placeholder="Donner le titre">
+                </div>
+                <div class="mb-3">
+                    <label for="recipient-name" class="col-form-label">Image:</label>
+                    <input type="file" class="form-control" id="imageArticle" placeholder="Donner l'image"  >
+                  </div>
+                <div class="mb-3">
+                  <label for="message-text" class="col-form-label">Description:</label>
+                  <textarea class="form-control articleinput-blog" id="descriptionArticle" placeholder="Commencez à écrire votre article ici"></textarea>
+                </div>
+              </form>
+        </div>
+        <div class="d-flex justify-content-end my-2 p-2">
+          <button type="button" class="btn btn-primary me-2 boutonpubliermodel-blog">Publier</button>
+          <button type="button" class="btn btn-secondary boutonannulermodel-blog" data-bs-dismiss="modal">Annuler</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- fin du modelle d'ajoute d'un article dans le blog -->
+
+<!-- debut du model de modification  -->
+<div class="modal fade" id="modifier" tabindex="-1" aria-labelledby="modifierLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="modifierLabel">Modifier article</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form>
+                <div class="mb-3">
+                  <label for="recipient-name" class="col-form-label ">Titre:</label>
+                  <input type="text" class="form-control" id="recipient-name" placeholder="Donner le titre">
+                </div>
+                <div class="mb-3">
+                    <label for="recipient-name" class="col-form-label">Image:</label>
+                    <input type="file" class="form-control" id="recipient-name" placeholder="Donner l'image">
+                </div>
+                <div class="mb-3">
+                  <label for="message-text" class="col-form-label">Description:</label>
+                  <textarea class="form-control articleinput-blog" id="message-text" placeholder="Commencez à écrire votre article ici"></textarea>
+                </div>
+            </form>
+        </div>
+        <div class="d-flex justify-content-end my-2 p-2">
+            <button type="button" class="btn btn-primary me-2 boutonpubliermodel-blog">Publier</button>
+            <button type="button" class="btn btn-secondary boutonannulermodel-blog" data-bs-dismiss="modal">Annuler</button>
+        </div>
+      </div>
+    </div>
+</div>
+<!-- fin du model de modification  -->
+
+  <!-- debut du model article details -->
+<div class="modal fade" id="examplearticle" tabindex="-1" aria-labelledby="examplearticle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5 text-center" id="exampleModalLabel">Details d'un article</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>Titre de l'article</p>
+            <img src="../assets/images/bannieres/ban3.jpg" alt="" width="450px">
+            <p>la Description
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos veniam rerum eaque dolores? Maxime est animi odio veritatis, aperiam eos dolorem incidunt optio. Accusantium temporibus exercitationem, enim voluptates dolore eos.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur fugiat labore ipsa. Quidem fugiat praesentium odit corporis repellat, cumque in quis vitae totam saepe. Maiores ut accusantium quisquam saepe similique!
+            </p>
+            <p>la Description
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos veniam rerum eaque dolores? Maxime est animi odio veritatis, aperiam eos dolorem incidunt optio. Accusantium temporibus exercitationem, enim voluptates dolore eos.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur fugiat labore ipsa. Quidem fugiat praesentium odit corporis repellat, cumque in quis vitae totam saepe. Maiores ut accusantium quisquam saepe similique!
+            </p>
+          <div class="d-flex justify-content-end my-2 p-2">
+            <button type="button" class="btn btn-primary me-2 boutonpubliermodel-blog">Commentaires</button>
+          </div>
+        </div>
+    </div>
+</div>
+<!-- fin du model article details -->
+ 
+

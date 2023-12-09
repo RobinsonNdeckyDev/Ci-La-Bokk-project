@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./gestion-blog.component.css']
 })
 export class GestionBlogComponent {
-
+  ajouterArticle(){
+    
+  }
+  
 }

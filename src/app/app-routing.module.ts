@@ -15,6 +15,7 @@ import { DashboardAdminComponent } from './admin/dashboard-admin/dashboard-admin
 import { ListeInvestissementBailleurComponent } from './bailleur/liste-investissement-bailleur/liste-investissement-bailleur.component';
 import { ListeProjetsBailleurComponent } from './bailleur/liste-projets-bailleur/liste-projets-bailleur.component';
 import { ProfilBailleurComponent } from './bailleur/profil-bailleur/profil-bailleur.component';
+import { InvestissementPorteurComponent } from './porteur-projet/investissement-porteur/investissement-porteur.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/accueil', pathMatch: 'full' }, // Redirection par défaut
@@ -33,6 +34,7 @@ const routes: Routes = [
   { path: 'dashboardbailleur', component: ListeInvestissementBailleurComponent},
   { path: 'projetsBailleur', component: ListeProjetsBailleurComponent},
   { path: 'profilBailleur', component: ProfilBailleurComponent},
+  { path: 'liste-investissement-porteur', component: InvestissementPorteurComponent},
 
 
 

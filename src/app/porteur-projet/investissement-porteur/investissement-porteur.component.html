@@ -18,47 +18,47 @@
 
     <!-- SIDEBAR -->
     <section id="sidebar">
-    <a href="#" class="brand">
-        <img src="../../../assets/images/logo.png" alt="" height="80px" class="m-0 m-auto ">
-    </a>
-    <hr class="border">
-    <ul class="side-menu top">
-        <li class="active">
-            <a href="#" href="#content" >
-                <i class='bx bxs-dashboard'></i>
-                <span class="text">Liste projet</span>
-            </a>
-        </li>
-        <li>
-            <a href="#content" >
-                <i class='bx bxs-shopping-bag-alt'></i>
-                <span class="text">Investissement</span>
-            </a>
-        </li>
-        <li>
-            <a href="#" href="#content">
-                <i class='bx bxs-doughnut-chart'></i>
-                <span class="text">Profil</span>
-            </a>
-        </li>
-        <li>
-
-        </li>
-        <li>
-
-        </li>
-    </ul>
-    <ul class="side-menu">
-        <li>
-
-        </li>
-        <li>
-            <a href="#" class="logout" y>
-                <i class='bx bxs-log-out-circle'></i>
-                <span class="text">Se deconnecter</span>
-            </a>
-        </li>
-    </ul>
+        <a href="#" class="brand">
+            <img src="../../../assets/images/logo.png" alt="" height="80px" class="m-0 m-auto ">
+        </a>
+        <hr class="border">
+        <ul class="side-menu top">
+            <li>
+                <a href="#" href="#content" [routerLink]="['/ajout']">
+                    <i class='bx bxs-dashboard'></i>
+                    <span class="text">Liste projet</span>
+                </a>
+            </li>
+            <li class="active">
+                <a href="#content" [routerLink]="['/liste-investissement-porteur']">
+                    <i class='bx bxs-shopping-bag-alt'></i>
+                    <span class="text">Investissement</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" href="#content" [routerLink]="['/profilporteur']">
+                    <i class='bx bxs-doughnut-chart'></i>
+                    <span class="text">Profil</span>
+                </a>
+            </li>
+            <li>
+    
+            </li>
+            <li>
+    
+            </li>
+        </ul>
+        <ul class="side-menu">
+            <li>
+    
+            </li>
+            <li>
+                <a href="#" class="logout">
+                    <i class='bx bxs-log-out-circle'></i>
+                    <span class="text">Se deconnecter</span>
+                </a>
+            </li>
+        </ul>
     </section>
     <!-- SIDEBAR -->
 
@@ -127,7 +127,8 @@
                                 <td><span class="status completed">2 000 000</span></td>
                                 <td>10/10/2010</td>
                                 <td>Non</td>
-                                <td><a href="#"  data-bs-toggle="modal" data-bs-target="#modalDetailInvestissement"><i class="bi bi-eye text-info fs-4"></i></a></td>
+                                <td><a href="#" data-bs-toggle="modal" data-bs-target="#modalDetailInvestissement"><i
+                                            class="bi bi-eye text-info fs-4"></i></a></td>
                             </tr>
                             <tr>
                                 <td>
@@ -138,7 +139,8 @@
                                 <td><span class="status completed">2 000 000</span></td>
                                 <td>10/10/2010</td>
                                 <td>Non</td>
-                                <td><a href="#"  data-bs-toggle="modal" data-bs-target="#modalDetailInvestissement"><i class="bi bi-eye text-info fs-4"></i></a></td>
+                                <td><a href="#" data-bs-toggle="modal" data-bs-target="#modalDetailInvestissement"><i
+                                            class="bi bi-eye text-info fs-4"></i></a></td>
                             </tr>
                         </tbody>
                     </table>
@@ -163,6 +165,7 @@
                         <div class="row g-0">
                             <div class="col-md-8">
                                 <div class="card-body">
+                                    <h6 class="fw-bold ">Investisseur:</h6>
                                     <h6 class="fw-bold ">Projet:</h6>
                                     <h6 class="fw-bold ">Montant:</h6>
                                     <h6 class="fw-bold ">Date:</h6>
@@ -171,7 +174,8 @@
                                         lead-in to additional
                                         content. This content is a little bit longer.</p>
                                     <p class="card-text">
-                                        <button class="btn btn-sup ms-2">Supprimer</button>
+                                        <button class="btn btn-approuver ms-2">Appouver</button>
+                                        <button class="btn btn-modifier ms-2">desaprouver</button>
                                     </p>
                                 </div>
                             </div>

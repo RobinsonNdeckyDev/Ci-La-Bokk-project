@@ -1,7 +1,7 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap'); */
 
 * {
-
+    
     box-sizing: border-box;
 }
 
@@ -702,31 +702,14 @@ html {
     border-radius: 25px;
 }
 
-
 .ligne-table {
     border-bottom: 2px dashed #E3E3E3;
 }
-
-.image-profil{
-    /* border: 2px solid ; */
-    border-radius: 50%;
-    height: 140px;
-    width: 150px;
-    margin: 0 auto;
-}
-.image-profil img{
-    height: 100%;
-    width: 100%;
-    border-radius: 50%;
-}
-.btn-modifier{
+.btn-modifier {
     background-color: #E75761;
     color: white;
 }
-.btn-annuler{
-    border: 2px solid #E75761;
-    color: #E75761;
-}
-#test input{
-    border: 1px solid #E75761;
+.btn-approuver{
+    background-color: #308AA7;
+    color: white;
 }

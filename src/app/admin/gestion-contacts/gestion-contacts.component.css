@@ -11,3 +11,16 @@
 .titremere-contact{
     color: #308AA7;
 }
+.pagination li {
+    border: none;
+}
+
+.pagination li a {
+    color: black;
+    cursor: pointer;
+}
+
+.pagination .active a {
+    background-color: #E75761;
+    color: white;
+}

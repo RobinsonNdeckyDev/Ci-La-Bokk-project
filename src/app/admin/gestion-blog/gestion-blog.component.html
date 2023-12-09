@@ -1,7 +1,7 @@
 <!-- debut du contenu de la page blog dashboard admin -->
 <div>
     <h3 class="text-center mt-4 fw-bold display-5 titremere-blog">Listes des blogs</h3>
-    <div class="d-flex justify-content-around">
+    <div class="d-flex justify-content-between">
         <button class="btn fw-bold  boutonajouter-blog" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="ajouterArticle()">Ajouter</button>
         <p><input type="text" class="rounded-start-4 inputrecherchemoi-article" placeholder="  Cherche un article"><button class="rounded-end-4 boutoncherchemoi-article"><i class="bi bi-search"></i></button></p>
     </div>
@@ -49,6 +49,28 @@
   </div>
 </div>
 <!-- fin du contenu de la page blog dashboard admin -->
+
+<!-- pagination -->
+<div class="pagin d-flex justify-content-center">
+  <nav aria-label="Page navigation example">
+      <ul class="pagination">
+          <li class="page-item">
+              <a class="page-link" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+              </a>
+          </li>
+          <li class="page-item active"><a class="page-link">1</a></li>
+          <li class="page-item"><a class="page-link">2</a></li>
+          <li class="page-item"><a class="page-link">3</a></li>
+          <li class="page-item">
+              <a class="page-link" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+              </a>
+          </li>
+      </ul>
+  </nav>
+</div>
+<!-- pagination -->
 
 <!-- debut modelle d'ajoute d'un article dans le blog --> 
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

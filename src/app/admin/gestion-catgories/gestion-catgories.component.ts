@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./gestion-catgories.component.css']
 })
 export class GestionCatgoriesComponent {
-
+  ajouterCategorie(){}
 }

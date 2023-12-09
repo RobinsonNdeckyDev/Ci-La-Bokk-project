@@ -1,1 +1,96 @@
-<p class="text-danger">gestion-catgories works!</p>
+<div class="card p-3 m-0 shadow border-0">
+    <h1 class="text-center titreDash fw-bold mb-4">Liste des categories</h1>
+
+    <div>
+        <div class="d-flex justify-content-between my-3 w-100">
+                <button class="btn fw-bold  boutonajouter-categorie" data-bs-toggle="modal" data-bs-target="#ajoutCategorie" (click)="ajouterCategorie()">Ajouter</button>
+            <div class="search">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control inputPorteur" placeholder="Chercher un porteur de projet">
+                    <span class="input-group-text iconsearch" id="basic-addon1"><i class="bi bi-search"></i></span>
+                </div>
+            </div>
+    </div>
+    <div class="contentPorteur">
+        </div>
+        <!-- table porteurs -->
+        <div class="table-data container-fluid" id="container-table">
+            <div class="order p-0">
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th class="col">Titre du categorie</th>
+                            <th class="col text-center fw-bold fs-6">Nombre de projet</th>
+                            <th class="col text-center fw-bold fs-6">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="ligne-table">
+                            <td class="tableInfo">Agriculture</td>
+                            <td class="tableInfo text-center">25</td>
+                            <td class="d-flex tableIcons border-0 justify-content-around">
+                                <button class="btn p-2"data-bs-toggle="modal" data-bs-target="#detailBailleur"><i class="bi bi-pencil-square fw-semibold fs-4 iconeCategorie-modif"></i></button>
+                                <button class="btn p-O "><i class="bi bi-trash3 iconeCategorie-sup fw-semibold fs-4"></i></button>
+                            </td>
+                        </tr>
+                        <tr class="ligne-table">
+                            <td class="tableInfo">Technologie</td>
+                            <td class="tableInfo text-center">15</td>
+                            <td class="d-flex tableIcons border-0 justify-content-around">
+                                <button class="btn p-2"data-bs-toggle="modal" data-bs-target="#detailBailleur"><i class="bi bi-pencil-square fw-semibold fs-4 iconeCategorie-modif"></i></button>
+                                <button class="btn p-O "><i class="bi bi-trash3 iconeCategorie-sup fw-semibold fs-4"></i></button>
+                            </td>
+                        </tr>
+                        <tr class="ligne-table">
+                            <td class="tableInfo">Sante</td>
+                            <td class="tableInfo text-center">5</td>
+                            <td class="d-flex tableIcons border-0 justify-content-around">
+                                <button class="btn p-2"data-bs-toggle="modal" data-bs-target="#detailBailleur"><i class="bi bi-pencil-square fw-semibold fs-4 iconeCategorie-modif"></i></button>
+                                <button class="btn p-O "><i class="bi bi-trash3 iconeCategorie-sup fw-semibold fs-4"></i></button>
+                            </td>
+                        </tr>
+                        <tr class="ligne-table">
+                            <td class="tableInfo">Mode</td>
+                            <td class="tableInfo text-center">2</td>
+                            <td class="d-flex tableIcons border-0 justify-content-around">
+                                <button class="btn p-2"data-bs-toggle="modal" data-bs-target="#detailBailleur"><i class="bi bi-pencil-square fw-semibold fs-4 iconeCategorie-modif"></i></button>
+                                <button class="btn p-O "><i class="bi bi-trash3 iconeCategorie-sup fw-semibold fs-4"></i></button>
+                            </td>
+                        </tr>
+                        <tr class="ligne-table">
+                            <td class="tableInfo">Agriculture</td>
+                            <td class="tableInfo text-center">22</td>
+                            <td class="d-flex tableIcons border-0 justify-content-around">
+                                <button class="btn p-2"data-bs-toggle="modal" data-bs-target="#detailBailleur"><i class="bi bi-pencil-square fw-semibold fs-4 iconeCategorie-modif"></i></button>
+                                <button class="btn p-O "><i class="bi bi-trash3 iconeCategorie-sup fw-semibold fs-4"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="pagin d-flex justify-content-center">
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                            <li class="page-item">
+                                <a class="page-link" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <li class="page-item active"><a class="page-link">1</a></li>
+                            <li class="page-item"><a class="page-link">2</a></li>
+                            <li class="page-item"><a class="page-link">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>

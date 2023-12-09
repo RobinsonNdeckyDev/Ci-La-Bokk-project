@@ -66,3 +66,12 @@
     color: white;
     border: 2px solid #E75761 ;
 }
+
+.boutonannulermodel-blog{
+    background-color: #E75761;
+    color: white;
+}
+.boutonpubliermodel-blog{
+    background-color: #308AA7;
+    color: white;
+}

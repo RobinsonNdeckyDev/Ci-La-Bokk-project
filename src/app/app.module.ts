@@ -60,7 +60,8 @@ import { InvestissementPorteurComponent } from './porteur-projet/investissement-
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

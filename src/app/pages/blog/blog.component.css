@@ -1,0 +1,77 @@
+
+/* style des cartes Projets */
+
+.Blocs{
+    margin: 0,auto;
+    border: 1px solid black;
+    width: 100%;
+    min-height: 80vh;
+    box-sizing: border-box;
+}
+.container{
+    margin: 0 auto;
+    width: 90%;
+    min-height: 555px;
+    /* background-color:navy; */
+    border: 1px solid black;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 100px 50px;
+    padding: 100px 50px;
+}
+
+.container .card{
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    width: 400px;
+    height: 450px;
+    /* background: #1806a7; */
+    border-radius: 25px;
+    box-shadow: 0 5px 5px gray;
+    transition: 0.5s;
+
+}
+.container .card :hover{
+    height: 500px;
+}
+
+
+.container .card .imgBx{
+    position: absolute;
+    width: 300px;
+    bottom: -100;
+    height: 220px;
+    background: #87120e;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 5px 5px gray;
+    transition: 0.5s;
+
+}
+.container .card:hover.imgBx {
+    bottom:40px;
+    scale: 0.75;
+    box-shadow: 0 15px 5px gray;
+}
+.container .card .Content{
+    top: 250px;
+    text-align: center;
+    position: absolute;
+    border-color: aqua;
+    width: 400px;
+    height: 350px;
+
+}
+.container .card .Content img{
+
+    top: 0;
+    left: 0;
+    width: 100%;
+    height:100%;
+    padding: 0 30px;
+    object-fit: cover;
+    border-radius: 25px;
+}

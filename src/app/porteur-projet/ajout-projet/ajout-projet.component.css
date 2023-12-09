@@ -595,6 +595,7 @@ li {
     #content nav .nav-link {
         display: none;
     }
+    
 }
 
 
@@ -648,6 +649,7 @@ li {
     #content main .table-data .todo .todo-list {
         min-width: 420px;
     }
+        
 }
 
 #btn-ajout {
@@ -751,4 +753,20 @@ li {
     border-radius: 5px;
     width: 20%;
     padding: 4px;
+}
+
+@media screen and (max-width: 768px){
+    .contain-card {
+        display: grid;
+        grid-template-columns: 2fr;
+        gap: 10px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width:990px) {
+    .contain-card {
+        display: grid;
+        grid-template-columns: 2fr 2fr;
+        gap: 10px;
+    }
 }

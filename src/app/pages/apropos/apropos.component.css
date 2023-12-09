@@ -1,0 +1,79 @@
+/* Debut de la section partenaire */
+.contain-partenaire {
+    width: 95%;
+    margin: 0 auto;
+    padding-top: 5vh;
+}
+
+.card-partenaire img {
+    height: 50px;
+    width: 50px;
+}
+
+/* fin de la section */
+
+/* Debut stylisation de la section apropos */
+.contain-apropos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5vh;
+
+}
+
+.card-left,
+.card-right {
+    padding: 10px;
+    text-align: justify;
+}
+
+.tiret {
+    background-color: #E75761;
+    width: 8%;
+    height: 5px;
+    border-radius: 10px;
+    margin: 14px 0 0 10px;
+}
+
+.titre {
+    color: #E75761;
+    font-weight: bold;
+}
+
+.btn-outline {
+    color: #E75761;
+    border: 2px solid #E75761;
+}
+
+#container {
+    width: 95%;
+}
+
+.contain-image {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 5vh;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.col1 {
+    border-radius: 10px;
+}
+
+.contain-image .col1 img {
+    height: 100%;
+    width: 100%;
+}
+
+.contain-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8vh;
+    padding: 10px;
+}
+
+.slogan {
+    font-weight: 600;
+}
+
+/* fin de la section */

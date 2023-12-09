@@ -29,7 +29,7 @@
                 </a>
             </li>
             <li>
-                <a href="#content">
+                <a href="#content" routerLink="/listeporteur">
                     <i class='bx bxs-shopping-bag-alt'></i>
                     <span class="text">Investissement</span>
                 </a>
@@ -161,20 +161,20 @@
                             </div>
                             <div class="mb-4">
                                 <label for="inputDuree" class="form-label fw-bold">Duree</label>
-                                <input type="text" name="duree" class="form-control" id="inputduree" placeholder="Entrez la duree">
+                                <input type="text" name="duree" class="form-control" id="inputduree" placeholder="Entrez la duree" >
                             </div>
                             <div class="mb-4">
                                 <label for="inputCout" class="form-label fw-bold">Cout</label>
                                 <input type="text" name="cout" class="form-control" id="inputCout" placeholder="Entrez le cout">
                             </div>
                             <div class="mb-4">
-                                <label for="inputLibelle" class="form-label fw-bold">Image</label>
+                                <label for="inputImage" class="form-label fw-bold">Image</label>
                                 <input type="file" class="form-control" id="inputGroupFile02">
                             </div>
                             <div class="mb-4">
                                 <label for="inputDescription" class="form-label fw-bold">Description</label>
                                 <div class="form-floating">
-                                    <textarea class="form-control" placeholder="description" name="description" id="description"></textarea>
+                                    <textarea class="form-control" placeholder="description" name="description" id="description" hidden value=""></textarea>
                                 </div>
                             </div>
                         </form>

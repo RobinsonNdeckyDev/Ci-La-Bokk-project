@@ -27,6 +27,7 @@ import { GestionBailleursComponent } from './admin/gestion-bailleurs/gestion-bai
 import { GestionNewslettersComponent } from './admin/gestion-newsletters/gestion-newsletters.component';
 import { GestionContactsComponent } from './admin/gestion-contacts/gestion-contacts.component';
 import { FormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
@@ -58,9 +59,7 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    HttpClientModule
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -562,3 +562,10 @@
         border-radius: 10px;
     }
 }
+.img{
+    background-image: url('../../../assets/images/rectangle 50.png');
+    height: 95vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}

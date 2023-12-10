@@ -27,7 +27,7 @@ const routes: Routes = [
   { path: 'politique-confidentialite', component: PolitiqueConfidentialiteComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'ajout', component: AjoutProjetComponent },
+  { path: 'ajout/:id', component: AjoutProjetComponent },
   { path: 'listeporteur', component: ListeInvestissementsComponent },
   { path: 'profilporteur', component: ProfilPorteurComponent },
   { path: 'dashboard', component: DashboardAdminComponent},

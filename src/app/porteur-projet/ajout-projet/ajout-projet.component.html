@@ -104,42 +104,16 @@
 
             <div class="container mt-4 p-0 ">
                 <div class="contain-card">
-                    <div class="card">
+                    <div class="card" *ngFor="let projet of projets ">
                         <img src="https://img.freepik.com/photos-gratuite/smiley-femme-tir-complet-tenant-tablette_23-2149894712.jpg?w=826&t=st=1702037163~exp=1702037763~hmac=09a1131237a1b454ce522e2ced8ba7720fc63e6bfc8703779ec1134ef6c8bcb9"
                             class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title text-center">Card title</h5>
-                            <p class="card-text text-center">This is a longer card with supporting text below as a
-                                natural lead-in to additional content.
+                            <h5 class="card-title text-center">{{projet.nom}}</h5>
+                            <p class="card-text text-center">{{projet.description}}.
                             </p>
                             <button class="btn-detail mb-3" data-bs-toggle="modal" data-bs-target="#modalDetailProjet">Detail</button>
                         </div>
                     </div>
-                    <div class="card">
-                        <img src="https://img.freepik.com/photos-gratuite/smiley-femme-tir-complet-tenant-tablette_23-2149894712.jpg?w=826&t=st=1702037163~exp=1702037763~hmac=09a1131237a1b454ce522e2ced8ba7720fc63e6bfc8703779ec1134ef6c8bcb9"
-                            class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">Card title</h5>
-                            <p class="card-text text-center">This is a longer card with supporting text below as a
-                                natural lead-in to additional
-                                content.
-                            </p>
-                            <button class="btn-detail mb-3">Detail</button>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img src="https://img.freepik.com/photos-gratuite/smiley-femme-tir-complet-tenant-tablette_23-2149894712.jpg?w=826&t=st=1702037163~exp=1702037763~hmac=09a1131237a1b454ce522e2ced8ba7720fc63e6bfc8703779ec1134ef6c8bcb9"
-                            class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">Card title</h5>
-                            <p class="card-text text-center">This is a longer card with supporting text below as a
-                                natural lead-in to additional
-                                content.
-                            </p>
-                            <button class="btn-detail mb-3">Detail</button>
-                        </div>
-                    </div>
-
                 </div>
             </div>
            
@@ -157,30 +131,39 @@
                         <form class="form">
                             <div class="mb-4">
                                 <label for="inputLibelle" class="form-label fw-bold">Libelle</label>
-                                <input type="text" name="libelle" class="form-control" id="inputlibelle" placeholder="Entrez le libelle">
+                                <input type="text" name="nom" class="form-control" id="inputlibelle" placeholder="Entrez le libelle" [(ngModel)]="nom">
+                            </div>
+                            <div class="mb-4">
+                                <label for="inputLibelle" class="form-label fw-bold">Categorie</label>
+                                <select class="form-select" aria-label="Default select example" name="categorie" [(ngModel)]="categorie">
+                                    <option selected>Vous etes ...</option>
+                                    <option value="organisme">organisme</option>
+                                    <option value="ONG">ONG</option>
+                                    <option value="particulier">particulier</option>
+                                </select>
                             </div>
                             <div class="mb-4">
                                 <label for="inputDuree" class="form-label fw-bold">Duree</label>
-                                <input type="text" name="duree" class="form-control" id="inputduree" placeholder="Entrez la duree" >
+                                <input type="text" name="echeance" class="form-control" id="echeance" placeholder="Entrez la duree" [(ngModel)]="echeance" >
                             </div>
                             <div class="mb-4">
                                 <label for="inputCout" class="form-label fw-bold">Cout</label>
-                                <input type="text" name="cout" class="form-control" id="inputCout" placeholder="Entrez le cout">
+                                <input type="text" name="budget" class="form-control" id="inputCout" placeholder="Entrez le cout" [(ngModel)]="budget">
                             </div>
                             <div class="mb-4">
                                 <label for="inputImage" class="form-label fw-bold">Image</label>
-                                <input type="file" class="form-control" id="inputGroupFile02">
+                                <input type="file" class="form-control" id="inputGroupFile02" name="photo" [(ngModel)]="photo">
                             </div>
                             <div class="mb-4">
                                 <label for="inputDescription" class="form-label fw-bold">Description</label>
                                 <div class="form-floating">
-                                    <textarea class="form-control" placeholder="description" name="description" id="description" hidden value=""></textarea>
+                                    <textarea class="form-control" placeholder="description" name="description" id="description" [(ngModel)]="description"></textarea>
                                 </div>
                             </div>
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn-ajoutProjet m-0 m-auto " data-bs-dismiss="modal">Ajouter</button>
+                        <button type="button" class="btn-ajoutProjet m-0 m-auto " data-bs-dismiss="modal" (click)="ajoutProjet()">Ajouter</button>
                     </div>
                 </div>
             </div>
@@ -188,7 +171,7 @@
 
         <!-- Modal detail -->
         <div class="modal  modal-lg" tabindex="-1" id="modalDetailProjet">
-            <div class="modal-dialog">
+            <div class="modal-dialog" *ngFor="let projet of projets">
                 <div class="modal-content">
                     <div class="modal-header border-0 ">
                         <h5 class="modal-title col-12 text-center ">Detail d'un projet</h5>
@@ -202,13 +185,12 @@
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body">
-                                        <h6 class="fw-bold ">Titre:</h6>
-                                        <h6 class="fw-bold ">categorie:</h6>
-                                        <h6 class="fw-bold ">Duree:</h6>
-                                        <h6 class="fw-bold ">cout:</h6>
+                                        <h6 class="fw-bold ">Titre:{{projetDetail?.nom}}</h6>
+                                        <h6 class="fw-bold ">categorie:{{projetDetail?.categorie}}</h6>
+                                        <h6 class="fw-bold ">Duree:{{projetDetail?.echeance}}</h6>
+                                        <h6 class="fw-bold ">cout:{{projetDetail?.budget}}</h6>
                                         <h6 class="fw-bold ">Description:</h6>
-                                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                                            content. This content is a little bit longer.</p>
+                                        <p class="card-text">{{projetDetail?.description}}</p>
                                         <p class="card-text">
                                             <button class="btn btn-modif ">Modifier</button>
                                             <button class="btn btn-sup ms-2">Supprimer</button>

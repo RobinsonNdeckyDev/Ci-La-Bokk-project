@@ -1,7 +1,7 @@
 
 /* style des cartes Projets */
 
-.Blocs{
+/* .Blocs{
     margin: 0,auto;
     border: 1px solid black;
     width: 100%;
@@ -12,7 +12,7 @@
     margin: 0 auto;
     width: 90%;
     min-height: 555px;
-    /* background-color:navy; */
+    background-color:navy;
     border: 1px solid black;
     position: relative;
     display: flex;
@@ -28,7 +28,7 @@
     align-items: flex-start;
     width: 400px;
     height: 450px;
-    /* background: #1806a7; */
+    background: #1806a7;
     border-radius: 25px;
     box-shadow: 0 5px 5px gray;
     transition: 0.5s;
@@ -74,4 +74,85 @@
     padding: 0 30px;
     object-fit: cover;
     border-radius: 25px;
+} */
+.Blocs{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+.firstDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+}
+.container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 100px 50px;
+
+}
+.container.card{
+    position: relative;
+    width: 350px;
+    height: 300px;
+    background-color: blue;
+    border-radius: 25px;
+    box-shadow: 10px 5px gray;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    transition: 0.5s;
+
+}
+.container.card :hover{
+    height: 400px;
+}
+
+.container.card .Content{
+    position: absolute;
+    border: solid black 5px;
+    width: 25px;
+    height: 10px;
+    background: rgb(14, 222, 66);
+    top: 20px;
+    border-radius: 25px;
+    transition: 0.5s;
+    overflow: hidden;
+}
+.container.card :hover.Content{
+    top: -100px;
+    scale: 0.75;
+    box-shadow: 0 5px 10px gray;
+}
+
+.container.card .Content img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 35px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 40px;
+}
+.container.card .imgBx{
+    position: absolute;
+    width: 100%;
+    padding: 0;
+    text-align: center;
+    top: 250px;
+    height: 40px;
+    overflow: hidden;
+    transition: 0.5s;
+}
+.container.card :hover.imgBx{
+    height: 250px;
+    top: 150px;
+}
+
+
+

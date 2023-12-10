@@ -65,3 +65,47 @@
 @media screen and (max-width:1200px) {
     
 }
+
+
+
+
+
+
+
+/* **************************************************************************************************************************** */
+
+.ajoutArticle input{
+    border: 1px solid #E75761;
+}
+
+.btn-add{
+    background-color: #308AA7 !important;
+    color: white;
+    font-weight: bold !important;
+}
+
+.titreAjout{
+    color: #E75761;
+}
+
+.btn-closeAjout{
+    background-color: #E75761;
+    color: white;
+    border-radius: 50%;
+}
+
+.mdfArticle input,textarea{
+    border: 1px solid #E75761;
+}
+
+.btnUpdate{
+    background-color: #308AA7 !important;
+    color: white;
+    font-weight: bold;
+}
+
+.btnAnnuler{
+    background-color: #E75761 !important;
+    color: white;
+    font-weight: bold;
+}

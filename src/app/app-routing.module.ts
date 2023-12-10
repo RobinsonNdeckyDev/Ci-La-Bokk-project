@@ -35,12 +35,7 @@ const routes: Routes = [
   { path: 'projetsBailleur', component: ListeProjetsBailleurComponent},
   { path: 'profilBailleur', component: ProfilBailleurComponent},
   { path: 'liste-investissement-porteur', component: InvestissementPorteurComponent},
-
-
-
-
-
-
+  { path: 'lise-investissement-bailleur', component: ListeInvestissementBailleurComponent}
 
 ];
 

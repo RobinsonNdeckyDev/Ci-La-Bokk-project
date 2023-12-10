@@ -1,12 +1,12 @@
 <!-- debut du contenu de la page blog dashboard admin -->
 <div>
     <h3 class="text-center mt-4 fw-bold titremere-blog">Listes des blogs</h3>
-    <div class="d-flex justify-content-between">
+    <!-- <div class="d-flex justify-content-between">
         <button class="btn fw-bold  boutonajouter-blog" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="ajouterArticle()">Ajouter</button>
         <p><input type="text" class="rounded-start-4 inputrecherchemoi-article" placeholder="  Cherche un article"><button class="rounded-end-4 boutoncherchemoi-article"><i class="bi bi-search"></i></button></p>
-    </div>
+    </div> -->
 </div>
-<div class="row">
+<!-- <div class="row">
   <div class="col-lg-6 col-md-12">
     <div class="card mb-3 carte-blog-admin mt-5 mx-auto rounded rounded-1">
       <div class="row g-0 blog-row">
@@ -47,7 +47,52 @@
       </div>
     </div>
   </div>
+</div> -->
+
+<!-- article.component.html -->
+<div class="border p-4" *ngFor="let article of articles">
+  <span>Identifiant de l'article: {{ article.id }}</span>
+  <h1>Titre de l'article: {{ article.titre }}</h1>
+  <p>Photo de l'article: {{ article.photo }}</p>
+
+  <p>Description de l'article: {{ article.description }}</p>
+  <button class="btn btn-warning text-white mx-3" (click)="updateArticle(article)">Modifier</button>
+  <button class="btn btn-danger text-white mx-3" (click)="deleteArticle(article.id)">Supprimer</button>
 </div>
+
+
+<!-- Ajouter un nouvel article -->
+
+Ajouter un article
+<form (submit)="ajouterArticle()"> 
+  <div class="mb-3">
+    <label for="titreArticle">Titre de l'article:</label>
+    <input type="text" id="titreArticle" name="titreArticle" [(ngModel)]="titreArticle" required>
+  </div>
+
+  <div class="mb-3">
+    <label for="articlePhoto">Photo de l'article:</label>
+    <input type="text" id="articlePhoto" name="articlePhoto" [(ngModel)]="articlePhoto" required>
+  </div>
+
+  <div class="mb-3">
+    <label for="descriptionArticle">Titre de l'article:</label>
+    <input type="text" id="descriptionArticle" name="descriptionArticle" [(ngModel)]="descriptionArticle" required>
+  </div>
+
+  <button type="submit">Ajouter</button>
+</form>
+<!-- (submit)="addArticle(newArticle)" -->
+
+
+
+
+
+
+
+
+
+
 <!-- fin du contenu de la page blog dashboard admin -->
 
 <!-- pagination -->

@@ -49,40 +49,95 @@
   </div>
 </div> -->
 
-<!-- article.component.html -->
-<div class="border p-4" *ngFor="let article of articles">
-  <span>Identifiant de l'article: {{ article.id }}</span>
-  <h1>Titre de l'article: {{ article.titre }}</h1>
-  <p>Photo de l'article: {{ article.photo }}</p>
 
-  <p>Description de l'article: {{ article.description }}</p>
-  <button class="btn btn-warning text-white mx-3" (click)="updateArticle(article)">Modifier</button>
-  <button class="btn btn-danger text-white mx-3" (click)="deleteArticle(article.id)">Supprimer</button>
+
+
+<!-- test Ajout article -->
+
+<div class="row">
+
+  <div class="col-12 col-md-6">
+    <!-- Ajouter un nouvel article -->
+    <form class="border" (submit)="addArticle()">
+      <div class="mb-3">
+        <label for="titreArticle">Titre de l'article:</label>
+        <input class="form-control" type="text" id="titreArticle" name="titreArticle" [(ngModel)]="titreArticle" required>
+      </div>
+    
+      <div class="mb-3">
+        <label for="articlePhoto">Photo de l'article:</label>
+        <input class="form-control" type="text" id="articlePhoto" name="articlePhoto" [(ngModel)]="articlePhoto" required>
+      </div>
+    
+      <div class="mb-3">
+        <label for="descriptionArticle">Description de l'article:</label>
+        <input class="form-control" type="text" id="descriptionArticle" name="descriptionArticle"
+          [(ngModel)]="descriptionArticle" required>
+      </div>
+    
+      <button class="btn btn-warning text-info" type="submit">Ajouter</button>
+    </form>
+
+    
+  <div class="col-12 col-md-6">
+    <!-- article.component.html -->
+    <div class="border mb-2 p-4" *ngFor="let article of articles">
+      <span>Identifiant de l'article: {{ article.id }}</span>
+      <h1>Titre de l'article: {{ article.titre }}</h1>
+      <img [src]="article.photo" class="img-fluid" alt="">
+    
+      <p>Description de l'article: {{ article.description }}</p>
+      <button class="btn btn-warning text-danger mx-3" data-bs-toggle="modal" data-bs-target="#editArticleModal" (click)="editArticle(article)">Modifier</button>
+      <button class="btn btn-danger" (click)="deleteArticle(article.id ?? -1)">Supprimer</button>
+      </div>
+    </div>
+  </div>
+
 </div>
 
 
-<!-- Ajouter un nouvel article -->
 
-Ajouter un article
-<form (submit)="ajouterArticle()"> 
-  <div class="mb-3">
-    <label for="titreArticle">Titre de l'article:</label>
-    <input type="text" id="titreArticle" name="titreArticle" [(ngModel)]="titreArticle" required>
+
+<!-- Button trigger modal -->
+
+<!-- Modal de modification -->
+<div class="modal fade" id="editArticleModal" tabindex="-1" aria-labelledby="editArticleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="editArticleModalLabel">Modifier l'article</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form (submit)="updateArticle()">
+          <label for="editTitle">Nouveau titre:</label>
+          <input id="editTitle" class="form-control" [(ngModel)]="editedArticle.titre" name="titre" required>
+
+          <label for="editPhoto">Nouvelle photo:</label>
+          <input id="editPhoto " class="form-control" [(ngModel)]="editedArticle.photo" name="photo" required>
+
+          <label for="editDescription">Nouvelle description:</label>
+          <textarea id="editDescription" class="form-control" [(ngModel)]="editedArticle.description" name="description" required></textarea>
+
+          <button type="submit" class="btn btn-primary">Enregistrer</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+            (click)="cancelEditing()">Annuler</button>
+        </form>
+      </div>
+    </div>
   </div>
+</div>
 
-  <div class="mb-3">
-    <label for="articlePhoto">Photo de l'article:</label>
-    <input type="text" id="articlePhoto" name="articlePhoto" [(ngModel)]="articlePhoto" required>
-  </div>
 
-  <div class="mb-3">
-    <label for="descriptionArticle">Titre de l'article:</label>
-    <input type="text" id="descriptionArticle" name="descriptionArticle" [(ngModel)]="descriptionArticle" required>
-  </div>
 
-  <button type="submit">Ajouter</button>
-</form>
-<!-- (submit)="addArticle(newArticle)" -->
+
+
+
+
+
+
+
+
 
 
 
@@ -211,3 +266,9 @@ Ajouter un article
 <!-- fin du model article details -->
  
 
+
+
+
+
+  <!-- Button trigger modal -->
+  

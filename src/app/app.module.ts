@@ -29,7 +29,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ListeInvestissementBailleurComponent } from './bailleur/liste-investissement-bailleur/liste-investissement-bailleur.component';
 import { ListeProjetsBailleurComponent } from './bailleur/liste-projets-bailleur/liste-projets-bailleur.component';
 import { InvestissementPorteurComponent } from './porteur-projet/investissement-porteur/investissement-porteur.component';
-import { DetailProjetComponent } from './porteur-projet/detail-projet/detail-projet.component';
+import { ProfilAdminComponent } from './admin/profil-admin/profil-admin.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +58,7 @@ import { DetailProjetComponent } from './porteur-projet/detail-projet/detail-pro
     ListeInvestissementBailleurComponent,
     ListeProjetsBailleurComponent,
     InvestissementPorteurComponent,
-    DetailProjetComponent
+    ProfilAdminComponent
   ],
   imports: [
     BrowserModule,

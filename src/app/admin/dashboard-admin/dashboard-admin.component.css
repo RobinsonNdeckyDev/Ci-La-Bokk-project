@@ -6,6 +6,10 @@
 
 }
 
+.sidebar li{
+    cursor: pointer;
+}
+
 .navDash{
     display: flex;
     justify-content: center;
@@ -21,12 +25,23 @@
     color: white;
 }
 
+.cartes .card:hover{
+    background-color: #085B75;
+    position: relative;
+    bottom: 5px;
+    transform: scale(0.9);
+}
+
 .cartes span{
     font-size: 50px;
 }
 
 .titreDash{
     color: #308AA7;
+}
+
+.dashImg{
+    background-color: #308AA7;
 }
 
 .btnVoiTout{
@@ -52,6 +67,12 @@ a {
 
 li {
     list-style: none;
+    cursor: pointer;
+}
+
+li:hover a{
+    color: #E75761 !important;
+    font-weight: bold ;
 }
 
 :root {
@@ -482,7 +503,7 @@ html {
     display: flex;
     flex-wrap: wrap;
     grid-gap: 24px;
-    margin-top: 24px;
+    margin-top: 50px;
     width: 100%;
     color: var(--dark);
 }

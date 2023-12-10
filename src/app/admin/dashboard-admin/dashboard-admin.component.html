@@ -17,34 +17,65 @@
 
     <!-- SIDEBAR -->
     <section id="sidebar">
-        <a href="#" class="brand">
+        <a class="brand">
             <img src="../../../assets/images/logo.png" alt="" height="80px" class="m-0 m-auto ">
         </a>
         <hr class="border">
         <ul class="side-menu top">
-            <li class="active">
-                <a href="#">
+            <li class="active" [ngClass]="{'fond-btn': boutonActif === 1}"
+                (click)="showComponant('dashDefault')" (click)="boutonActif = 1">
+                <a>
                     <i class='bx bxs-dashboard'></i>
-                    <span class="text">Liste projet</span>
+                    <span class="text">Dashboard</span>
                 </a>
             </li>
-            <li>
-                <a href="#content">
+            <li [ngClass]="{'fond-btn': boutonActif === 2}"
+                (click)="showComponant('dashCategories')" (click)="boutonActif = 2">
+                <a>
                     <i class='bx bxs-shopping-bag-alt'></i>
-                    <span class="text">Investissement</span>
+                    <span class="text">Catégories</span>
                 </a>
             </li>
-            <li>
-                <a href="#">
+            <li [ngClass]="{'fond-btn': boutonActif === 3}"
+                (click)="showComponant('dashBlog')" (click)="boutonActif = 3">
+                <a>
+                    <i class='bx bxs-doughnut-chart'></i>
+                    <span class="text">Blog</span>
+                </a>
+            </li>
+            <li [ngClass]="{'fond-btn': boutonActif === 4}"
+                (click)="showComponant('dashPorteurs')" (click)="boutonActif = 4">
+                <a>
+                    <i class='bx bxs-doughnut-chart'></i>
+                    <span class="text">Porteurs de projet</span>
+                </a>
+            </li>
+            <li [ngClass]="{'fond-btn': boutonActif === 5}"
+                (click)="showComponant('dashBailleurs')" (click)="boutonActif = 5">
+                <a>
+                    <i class='bx bxs-doughnut-chart'></i>
+                    <span class="text">Bailleurs</span>
+                </a>
+            </li>
+            <li [ngClass]="{'fond-btn': boutonActif === 6}"
+                (click)="showComponant('dashNewsletter')" (click)="boutonActif = 6">
+                <a>
+                    <i class='bx bxs-doughnut-chart'></i>
+                    <span class="text">Newsletters</span>
+                </a>
+            </li>
+            <li [ngClass]="{'fond-btn': boutonActif === 7}"
+                (click)="showComponant('dashContacts')" (click)="boutonActif = 7">
+                <a>
+                    <i class='bx bxs-doughnut-chart'></i>
+                    <span class="text">Contacts</span>
+                </a>
+            </li>
+            <li >
+                <a [ngClass]="{'fond-btn': boutonActif === 8}" (click)="showComponant('profilAdmin')" (click)="boutonActif = 8">
                     <i class='bx bxs-doughnut-chart'></i>
                     <span class="text">Profil</span>
                 </a>
-            </li>
-            <li>
-
-            </li>
-            <li>
-
             </li>
         </ul>
         <ul class="side-menu">
@@ -52,7 +83,7 @@
 
             </li>
             <li>
-                <a href="#" class="logout">
+                <a class="logout">
                     <i class='bx bxs-log-out-circle'></i>
                     <span class="text">Se deconnecter</span>
                 </a>
@@ -66,176 +97,125 @@
     <!-- CONTENT -->
     <section id="content">
         <!-- NAVBAR -->
-        <nav>
-            <i class='bx bx-menu'></i>
-            <a href="#" class="nav-link">Bienvenue</a>
-            <form action="#">
-                <div class="form-input">
-                    <input type="search" placeholder="Rechercher..." class="border">
-                    <button type="submit" class="search-btn border"><i class='bx bx-search'></i></button>
-                </div>
-            </form>
-            <input type="checkbox" id="switch-mode" hidden>
-            <label for="switch-mode" class="switch-mode"></label>
-            <a href="#" class="notification">
-                <i class='bx bxs-bell' style="color: #308AA7;"></i>
-                <span class="num" style="color: #E75761;">8</span>
-            </a>
-            <a href="#" class="profile">
-                <img
-                    src="https://img.freepik.com/photos-gratuite/close-up-portrait-belle-jeune-femme-afro-americaine-coupe-cheveux-boucles-afro-souriant-expression-agreable-heureuse-profitant-vacances-hiver-portant-pull-mur-bleu_1258-35442.jpg?size=626&ext=jpg&ga=GA1.1.810580184.1680065265&semt=ais">
-            </a>
+        <nav class="d-flex justify-content-between">
+            <div class="navDash">
+                <i class='bx bx-menu'></i>
+                <a href="#" class="nav-link">Bienvenue</a>
+            </div>
+            <div class="navDash">
+                <input type="checkbox" id="switch-mode" hidden>
+                <label for="switch-mode" class="switch-mode"></label>
+                <a class="notification">
+                    <i class='bx bxs-bell' style="color: #308AA7;"></i>
+                    <span class="num" style="color: #E75761;">8</span>
+                </a>
+                <a class="profile" [ngClass]="{'fond-btn': boutonActif === 8}"
+                (click)="showComponant('profilAdmin')" (click)="boutonActif = 8">
+                    <img
+                        src="../../../assets/images/bailleur.jpg">
+                </a>
+            </div>
         </nav>
         <!-- NAVBAR -->
 
         <!-- MAIN -->
-        <main>
-            <div class="head-title">
-                <div class="left">
-                    <button class="btn text-white py-2 px-4 fw-bold" id="btn-ajout" data-bs-toggle="modal"
-                        data-bs-target="#modalAjoutProjet">Ajouter</button>
-                </div>
-                <form action="#">
-                    <div class="form-input">
-                        <input type="search" placeholder="Rechercher..." class="border">
-                        <button type="submit" class="search-btn border"><i class='bx bx-search'></i></button>
+        <main class="">
+            
+            <div class="dashDefault" id="dashDefault"  *ngIf="currentContent === 'dashDefault'">
+                <h1 class="titreDash text-center fw-bold fs-2 mb-4">Dashboard</h1>
+                
+                <div class="cartes mb-5">
+                    <div class="row">
+                        <div class="col-12 col-md-4">
+                            <div class="card  text-center py-3">
+                                <h2 class="fw-bold">Bailleurs</h2>
+                                <span>15</span>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <div class="card text-center py-3">
+                                <h2 class="fw-bold">Porteurs de projets</h2>
+                                <span>25</span>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <div class="card text-center py-3">
+                                <h2 class="fw-bold">Catégories projet</h2>
+                                <span>06</span>
+                            </div>
+                        </div>
                     </div>
-                </form>
+                </div>
+
+
+                <div class="content">
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                           <div class="card p-2 shadow">
+                            <h3 class="titreDash text-center fw-bold fs-5 mb-2">liste des abonnées à la newsletter</h3>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Email</th>
+                                        <th scope="col">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="ligne-table">
+                                        <td class="tableInfo">markotto@gmail.com</td>
+                                        <td class="d-flex tablebtn border-0">
+                                        </td>
+                                    </tr>
+                                    <tr class="ligne-table">
+                                        <td class="tableInfo">markotto@gmail.com</td>
+                                        <td class="d-flex tablebtn border-0">
+                                        </td>
+                                    </tr>
+                                    <tr class="ligne-table">
+                                        <td class="tableInfo">markotto@gmail.com</td>
+                                        <td class="d-flex tablebtn border-0">
+                                        </td>
+                                    </tr>
+                                    <tr class="ligne-table">
+                                        <td class="tableInfo">markotto@gmail.com</td>
+                                        <td class="d-flex tablebtn border-0">
+                                        </td>
+                                    </tr>
+                            
+                                    <button class="btn btnVoiTout mb-0 mt-3" [ngClass]="{'fond-btn': boutonActif === 6}"
+                                        (click)="showComponant('dashNewsletter')" (click)="boutonActif = 6">
+                                        Voir tout
+                                    </button>
+                                </tbody>
+                            </table>
+                           </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="card dashImg p-2 shadow">
+                                <img src="../../../assets/images/logo-ci-la-bokk.png" class="img-fluid" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
             </div>
 
-            <div class="container mt-4 p-0 ">
-                <div class="contain-card">
-                    <div class="card">
-                        <img src="https://img.freepik.com/photos-gratuite/smiley-femme-tir-complet-tenant-tablette_23-2149894712.jpg?w=826&t=st=1702037163~exp=1702037763~hmac=09a1131237a1b454ce522e2ced8ba7720fc63e6bfc8703779ec1134ef6c8bcb9"
-                            class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">Card title</h5>
-                            <p class="card-text text-center">This is a longer card with supporting text below as a
-                                natural lead-in to additional content.
-                            </p>
-                            <button class="btn-detail mb-3" data-bs-toggle="modal"
-                                data-bs-target="#modalDetailProjet">Detail</button>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img src="https://img.freepik.com/photos-gratuite/smiley-femme-tir-complet-tenant-tablette_23-2149894712.jpg?w=826&t=st=1702037163~exp=1702037763~hmac=09a1131237a1b454ce522e2ced8ba7720fc63e6bfc8703779ec1134ef6c8bcb9"
-                            class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">Card title</h5>
-                            <p class="card-text text-center">This is a longer card with supporting text below as a
-                                natural lead-in to additional
-                                content.
-                            </p>
-                            <button class="btn-detail mb-3">Detail</button>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img src="https://img.freepik.com/photos-gratuite/smiley-femme-tir-complet-tenant-tablette_23-2149894712.jpg?w=826&t=st=1702037163~exp=1702037763~hmac=09a1131237a1b454ce522e2ced8ba7720fc63e6bfc8703779ec1134ef6c8bcb9"
-                            class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">Card title</h5>
-                            <p class="card-text text-center">This is a longer card with supporting text below as a
-                                natural lead-in to additional
-                                content.
-                            </p>
-                            <button class="btn-detail mb-3">Detail</button>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
+            <app-gestion-bailleurs id="dashBailleurs"  *ngIf="currentContent === 'dashBailleurs'"></app-gestion-bailleurs>
+            <app-gestion-blog id="dashBlog"  *ngIf="currentContent === 'dashBlog'"></app-gestion-blog>
+            <app-gestion-catgories id="dashCategories"  *ngIf="currentContent === 'dashCategories'"></app-gestion-catgories>
+            <app-gestion-newsletters id="dashNewsletter"  *ngIf="currentContent === 'dashNewsletter'"></app-gestion-newsletters>
+            <app-gestion-porteurs id="dashPorteurs"  *ngIf="currentContent === 'dashPorteurs'"></app-gestion-porteurs>
+            <app-gestion-contacts id="dashContacts"  *ngIf="currentContent === 'dashContacts'"></app-gestion-contacts>
+            <app-profil-admin id="profilAdmin"  *ngIf="currentContent === 'profilAdmin'"></app-profil-admin>
 
         </main>
-
-        <!-- Modal Ajout  projet -->
-        <div class="modal" tabindex="-1" id="modalAjoutProjet">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title col-12 text-center">Ajouter un projet</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form class="form">
-                            <div class="mb-4">
-                                <label for="inputLibelle" class="form-label fw-bold">Libelle</label>
-                                <input type="text" name="libelle" class="form-control" id="inputlibelle"
-                                    placeholder="Entrez le libelle">
-                            </div>
-                            <div class="mb-4">
-                                <label for="inputDuree" class="form-label fw-bold">Duree</label>
-                                <input type="text" name="duree" class="form-control" id="inputduree"
-                                    placeholder="Entrez la duree">
-                            </div>
-                            <div class="mb-4">
-                                <label for="inputCout" class="form-label fw-bold">Cout</label>
-                                <input type="text" name="cout" class="form-control" id="inputCout"
-                                    placeholder="Entrez le cout">
-                            </div>
-                            <div class="mb-4">
-                                <label for="inputLibelle" class="form-label fw-bold">Image</label>
-                                <input type="file" class="form-control" id="inputGroupFile02">
-                            </div>
-                            <div class="mb-4">
-                                <label for="inputDescription" class="form-label fw-bold">Description</label>
-                                <div class="form-floating">
-                                    <textarea class="form-control" placeholder="description" name="description"
-                                        id="description"></textarea>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn-ajoutProjet m-0 m-auto "
-                            data-bs-dismiss="modal">Ajouter</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Modal detail -->
-        <div class="modal  modal-lg" tabindex="-1" id="modalDetailProjet">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header border-0 ">
-                        <h5 class="modal-title col-12 text-center ">Detail d'un projet</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="card mb-3">
-                            <div class="row g-0">
-                                <div class="col-md-4">
-                                    <img src="https://img.freepik.com/photos-gratuite/smiley-femme-tir-complet-tenant-tablette_23-2149894712.jpg?w=826&t=st=1702048215~exp=1702048815~hmac=84dff7f194e8470ff50507ce6955c4790194781ff5ce3a5053b62299dde10d6e"
-                                        class="img-fluid rounded-start" alt="...">
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="card-body">
-                                        <h6 class="fw-bold ">Titre:</h6>
-                                        <h6 class="fw-bold ">categorie:</h6>
-                                        <h6 class="fw-bold ">Duree:</h6>
-                                        <h6 class="fw-bold ">cout:</h6>
-                                        <h6 class="fw-bold ">Description:</h6>
-                                        <p class="card-text">This is a wider card with supporting text below as a
-                                            natural lead-in to additional
-                                            content. This content is a little bit longer.</p>
-                                        <p class="card-text">
-                                            <button class="btn btn-modif ">Modifier</button>
-                                            <button class="btn btn-sup ms-2">Supprimer</button>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
         <!-- MAIN -->
     </section>
     <!-- CONTENT -->
 
     <script src="../../../assets/js/script.js"></script>
-
+    <script src="../../../assets/js/checked.js"></script>
 </body>
 
 </html>

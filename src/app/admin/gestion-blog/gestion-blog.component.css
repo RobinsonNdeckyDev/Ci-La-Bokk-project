@@ -5,6 +5,14 @@
     /* width: 900px; */
     height: auto;
 }
+.iconsearch {
+    background-color: #E75761;
+    color: white;
+}
+
+.iconsearch i {
+    color: white;
+}
 .boutonajouter-blog{
    background-color: #E75761;
    color: white;

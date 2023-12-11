@@ -59,6 +59,7 @@ export class GestionBlogComponent {
       };
 
       this.articleService.addArticle(newArticle).subscribe(() => {
+        this.articles.unshift(newArticle);
         this.alertMessage("success","Bravo!","Article ajouté avec succés");
         this.loadArticles();
       });

@@ -16,6 +16,8 @@ export class GestionBlogComponent {
   articlePhoto: string = "";
   descriptionArticle: string = "";
   selectedArticle: Article | null = null;
+
+
   
 
   isEditing: boolean = false;
@@ -24,10 +26,63 @@ export class GestionBlogComponent {
   // Tableau articles
   articles: Article[] = [];
 
+  // Attribut pour la pagination
+  articlesParPage = 10; // Nombre d'articles par page
+  pageActuelle = 1; // Page actuelle
+
+  // Attribut pour faire les recherche
+  searchArticle = '';
+  itemSearchs: any;
+
+  // Propriétés de pagination
+  itemsPerPage: number = 6;
+  currentPage: number = 1;
+
   constructor(private articleService: ArticleService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.loadArticles();
+  }
+
+  //methode qui permet de faire la recherche
+  articleFound() {
+    if (this.searchArticle.trim() === '') {
+      this.itemSearchs = null; 
+    } else {
+      this.itemSearchs = this.articles.filter(
+        (item: Article) => item.titre.toLowerCase().includes(this.searchArticle.toLowerCase())
+      );
+    }
+    this.currentPage = 1;
+  }
+
+  //methode pour gerer la pagination
+  get paginatedArticles(): any[] {
+    const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+    const endIndex = startIndex + this.itemsPerPage;
+    return this.itemSearchs ? this.itemSearchs.slice(startIndex, endIndex) : this.articles.slice(startIndex, endIndex);
+  }
+
+  getPageForArticle(article: any): number {
+    const articleIndex = this.itemSearchs ? this.itemSearchs.indexOf(article) : this.articles.indexOf(article);
+    return Math.ceil((articleIndex + 1) / this.itemsPerPage);
+  }
+  
+  
+  // methodes qui gerent les page pour la pagination
+
+  changePage(page: number): void {
+    if (page >= 1 && page <= this.getTotalPages()) {
+      this.currentPage = page;
+    }
+  }
+
+  getTotalPages(): number {
+    return Math.ceil((this.itemSearchs ? this.itemSearchs.length : this.articles.length) / this.itemsPerPage);
+  }
+
+  getPages(): number[] {
+    return Array.from({ length: this.getTotalPages() }, (_, i) => i + 1);
   }
 
 
@@ -127,7 +182,6 @@ export class GestionBlogComponent {
     });
   }
 
-
   
   // Message d'alerte
   alertMessage(icon: any, title: any, text: any){
@@ -137,7 +191,6 @@ export class GestionBlogComponent {
       text: text,
     });
   }
-
 
 }
 

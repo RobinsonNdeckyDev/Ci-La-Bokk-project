@@ -30,6 +30,8 @@ import { ListeInvestissementBailleurComponent } from './bailleur/liste-investiss
 import { ListeProjetsBailleurComponent } from './bailleur/liste-projets-bailleur/liste-projets-bailleur.component';
 import { InvestissementPorteurComponent } from './porteur-projet/investissement-porteur/investissement-porteur.component';
 import { ProfilAdminComponent } from './admin/profil-admin/profil-admin.component';
+import { InscriptionBailleurComponent } from './authentification/inscription-bailleur/inscription-bailleur.component';
+import { InscriptionPorteurComponent } from './authentification/inscription-porteur/inscription-porteur.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +60,9 @@ import { ProfilAdminComponent } from './admin/profil-admin/profil-admin.componen
     ListeInvestissementBailleurComponent,
     ListeProjetsBailleurComponent,
     InvestissementPorteurComponent,
-    ProfilAdminComponent
+    ProfilAdminComponent,
+    InscriptionBailleurComponent,
+    InscriptionPorteurComponent
   ],
   imports: [
     BrowserModule,

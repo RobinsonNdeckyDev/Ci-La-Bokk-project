@@ -5,13 +5,10 @@
         <button class="btn fw-bold  boutonajouter-blog" data-bs-toggle="modal" data-bs-target="#ajoutArticle">Ajouter un article</button>
         <div class="search">
           <div class="input-group mb-3">
-              <input type="text" class="form-control inputPorteur" placeholder="Chercher un article">
-              <span class="input-group-text iconsearch" id="basic-addon1"><i class="bi bi-search"></i></span>
+              <input type="text" class="form-control inputPorteur" placeholder="Chercher un article" [(ngModel)]="searchArticle" (input)="articleFound()">
+              <button class="input-group-text iconsearch" id="basic-addon1" (click)="articleFound()" ><i class="bi bi-search"></i></button>
           </div>
       </div>
-        <!-- <input type="text" class="" placeholder="Rechercher par titre">
-        <span class="input-group-text iconsearch" id="basic-addon1"><i class="bi bi-search"></i></span> -->
-          <!-- <button class="rounded-end-4 boutoncherchemoi-article"><i class="bi bi-search"></i></button> -->
     </div>
 </div>
 
@@ -20,7 +17,7 @@
 
 <div class="container mt-4 mb-5">
   <div class="row">
-    <div class="col-12 col-md-4" *ngFor="let article of articles">
+    <div class="col-12 col-md-4" *ngFor="let article of (itemSearchs ? itemSearchs : articles) of (paginatedArticles)">
       <div class="card border mb-2">
         <img [src]="article.photo" class="img-fluid" alt="">
         <div class="bodyArticle px-4">
@@ -44,28 +41,29 @@
 <!-- pagination -->
 <div class="pagin d-flex justify-content-center">
   <nav aria-label="Page navigation example">
-      <ul class="pagination">
-          <li class="page-item">
-              <a class="page-link" aria-label="Previous">
-                  <span aria-hidden="true">&laquo;</span>
-              </a>
-          </li>
-          <li class="page-item active"><a class="page-link">1</a></li>
-          <li class="page-item"><a class="page-link">2</a></li>
-          <li class="page-item"><a class="page-link">3</a></li>
-          <li class="page-item">
-              <a class="page-link" aria-label="Next">
-                  <span aria-hidden="true">&raquo;</span>
-              </a>
-          </li>
-      </ul>
+    <ul class="pagination">
+      <li class="page-item" (click)="changePage(currentPage - 1)" [class.disabled]="currentPage === 1">
+        <a class="page-link" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+        </a>
+      </li>
+      <li class="page-item" *ngFor="let page of getPages()">
+        <a class="page-link" (click)="changePage(page)" [class.active]="currentPage === page">{{ page }}</a>
+      </li>
+      <li class="page-item" (click)="changePage(currentPage + 1)" [class.disabled]="currentPage === getTotalPages()">
+        <a class="page-link" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+      </li>
+    </ul>
   </nav>
 </div>
 <!-- pagination -->
 
 
 
-<!-- debut modelle d'ajoute d'un article dans le blog --> 
+
+<!-- debut model d'ajoute d'un article dans le blog --> 
   <div class="modal fade" id="ajoutArticle" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -79,11 +77,16 @@
                 <label for="titreArticle">Titre de l'article:</label>
                 <input class="form-control" type="text" id="titreArticle" name="titreArticle" [(ngModel)]="titreArticle" required>
               </div>
+
+              <div class="mb-4">
+                <label for="inputImage" class="form-label fw-bold">Image</label>
+                <input type="file" class="form-control" id="inputGroupFile02" name="articlePhoto" [(ngModel)]="articlePhoto">
+              </div>
             
-              <div class="mb-3">
+              <!-- <div class="mb-3">
                 <label for="articlePhoto">Photo de l'article:</label>
                 <input class="form-control" type="text" id="articlePhoto" name="articlePhoto" [(ngModel)]="articlePhoto" required>
-              </div>
+              </div> -->
             
               <div class="mb-3">
                 <label for="descriptionArticle">Description de l'article:</label>
@@ -97,7 +100,7 @@
       </div>
     </div>
   </div>
-<!-- fin du modelle d'ajoute d'un article dans le blog -->
+<!-- fin du model d'ajoute d'un article dans le blog -->
 
 
 

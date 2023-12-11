@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { timer } from 'rxjs';
 import { Article } from 'src/app/Models/article.model';
+import { ActivatedRoute } from '@angular/router';
 import { ArticleService } from 'src/app/services/article.service';
 import Swal from 'sweetalert2';
 
@@ -15,6 +15,8 @@ export class GestionBlogComponent {
   titreArticle: string = "";
   articlePhoto: string = "";
   descriptionArticle: string = "";
+  selectedArticle: Article | null = null;
+  
 
   isEditing: boolean = false;
   editedArticle: Article = { id: 0, titre: '', photo: '', description: '' };
@@ -22,16 +24,17 @@ export class GestionBlogComponent {
   // Tableau articles
   articles: Article[] = [];
 
-  constructor(private articleService: ArticleService) {}
+  constructor(private articleService: ArticleService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.loadArticles();
   }
 
 
+
   // Récupération des articles 
   loadArticles() {
-    this.articleService.getArticles().subscribe((data) => {
+      this.articleService.getArticles().subscribe((data) => {
       this.articles = data;
     });
   }
@@ -61,6 +64,12 @@ export class GestionBlogComponent {
       });
     }
 
+  }
+
+
+  // Nouvelle méthode pour afficher les détails d'un article
+  showArticleDetails(article: Article) {
+    this.selectedArticle = article;
   }
 
 
@@ -116,6 +125,7 @@ export class GestionBlogComponent {
       }
     });
   }
+
 
   
   // Message d'alerte

@@ -84,8 +84,9 @@
     font-weight: bold !important;
 }
 
-.titreAjout{
+.titreAjout, .titreMdfArticle,.titreDetail{
     color: #E75761;
+    font-weight: bold;
 }
 
 .btn-closeAjout{
@@ -108,4 +109,9 @@
     background-color: #E75761 !important;
     color: white;
     font-weight: bold;
+}
+
+.btnCloseDetail{
+    background-color: #E75761;
+    color: white;
 }

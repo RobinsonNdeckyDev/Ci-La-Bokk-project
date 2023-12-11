@@ -8,6 +8,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit{
+  
   constructor(private route: Router){}
 
   ngOnInit(): void {
@@ -39,24 +40,7 @@ export class LoginComponent implements OnInit{
     this.password = "";
   }
 
-  inscription() {
-    const emailPattern = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
 
-    if (this.nomComplet == "" || this.email == "" || this.password == "" || this.telephone == "") {
-      this.verifInfos("Erreur!", "Veuillez remplir les champs", "error");
-    }
-    else if (!this.email.match(emailPattern)) {
-      this.verifInfos("Erreur!", "Email invalide", "error");
-    }
-    else if (this.password.length < 8) {
-      this.verifInfos("Erreur!", "Mot de passe doit être supérieur ou égal à 8", "error");
-    }
-    else {
-      this.verifInfos("Merci", "Compte créé avec succes", "success");
-      this.viderChamps();
-      this.ShowForm();
-    }
-  }
 
   login() {
     //  On verifie si les champs contiennent de l'information 
@@ -105,3 +89,39 @@ export class LoginComponent implements OnInit{
     this.formChoice = !this.formChoice;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// inscription() {
+//     const emailPattern = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+
+//     if (this.nomComplet == "" || this.email == "" || this.password == "" || this.telephone == "") {
+//       this.verifInfos("Erreur!", "Veuillez remplir les champs", "error");
+//     }
+//     else if (!this.email.match(emailPattern)) {
+//       this.verifInfos("Erreur!", "Email invalide", "error");
+//     }
+//     else if (this.password.length < 8) {
+//       this.verifInfos("Erreur!", "Mot de passe doit être supérieur ou égal à 8", "error");
+//     }
+//     else {
+//       this.verifInfos("Merci", "Compte créé avec succes", "success");
+//       this.viderChamps();
+//       this.ShowForm();
+//     }
+//   }

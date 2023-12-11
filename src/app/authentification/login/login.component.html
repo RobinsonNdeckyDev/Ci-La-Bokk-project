@@ -2,8 +2,8 @@
 <app-header class="sticky-top"></app-header>
 
 <!-- main -->
-<section class="ftco-section" *ngIf="formChoice">
-    <div class="container" >
+<section class="ftco-section">
+    <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-12 col-lg-10">
                 <div class="wrap d-md-flex">
@@ -18,11 +18,11 @@
                             <div class="w-100">
                                 <p class="social-media d-flex justify-content-end">
                                     <a href="#"
-                                        class="social-icon d-flex align-items-center justify-content-center"><span
-                                            class="fa fa-facebook"></span></a>
+                                        class="social-icon d-flex align-items-center justify-content-center">
+                                        <span class="fa fa-facebook"></span></a>
                                     <a href="#"
-                                        class="social-icon d-flex align-items-center justify-content-center"><span
-                                            class="fa fa-twitter"></span></a>
+                                        class="social-icon d-flex align-items-center justify-content-center">
+                                        <span class="fa fa-twitter"></span></a>
                                 </p>
                             </div>
                         </div>
@@ -42,17 +42,27 @@
                                     (click)="login()">Connexion</button>
                             </div>
                         </form>
-                        <p class="text-end">Avez-vous un compte? <a data-toggle="tab"
-                                (click)="ShowForm()">S'inscrire</a></p>
+                        <!-- <p class="text-end">Avez-vous un compte? <a data-toggle="tab"
+                                (click)="ShowForm()">S'inscrire</a></p> -->
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+<!-- footer -->
+<app-footer></app-footer>
+
+
+
+
+
+
+
+
 
 <!-- Formulaire d'incription du porteur de projet-->
-<section class="ftco-section"  *ngIf="!formChoice">
+<!-- <section class="ftco-section" *ngIf="!formChoice">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-12 col-lg-10">
@@ -68,19 +78,21 @@
                             <div class="w-100">
                                 <p class="social-media d-flex justify-content-end">
                                     <a href="#"
-                                        class="social-icon d-flex align-items-center justify-content-center"><span
-                                            class="fa fa-facebook"></span></a>
+                                        class="social-icon d-flex align-items-center justify-content-center">
+                                        <span class="fa fa-facebook"></span>
+                                    </a>
                                     <a href="#"
-                                        class="social-icon d-flex align-items-center justify-content-center"><span
-                                            class="fa fa-twitter"></span></a>
+                                        class="social-icon d-flex align-items-center justify-content-center">
+                                        <span class="fa fa-twitter"></span>
+                                    </a>
                                 </p>
                             </div>
                         </div>
                         <form action="#" class="signin-form">
                             <div class="form-group mb-3">
                                 <label class="label" for="nomComplet">Prenom & Nom</label>
-                                <input type="text" class="form-control" placeholder="Prenon et Nom" required name="nomComplet"
-                                    [(ngModel)]="nomComplet">
+                                <input type="text" class="form-control" placeholder="Prenon et Nom" required
+                                    name="nomComplet" [(ngModel)]="nomComplet">
                             </div>
                             <div class="form-group mb-3">
                                 <label class="label" for="email">Email</label>
@@ -94,13 +106,15 @@
                             </div>
                             <div class="form-group mb-3">
                                 <label class="label" for="telephone">Telephone</label>
-                                <input type="text" class="form-control" placeholder="Telephone" required name="telephone" [(ngModel)]="telephone">
+                                <input type="text" class="form-control" placeholder="Telephone" required
+                                    name="telephone" [(ngModel)]="telephone">
                             </div>
                             <div class="form-group mb-3">
                                 <label class="label" for="image">Image</label>
-                                <input type="file" class="form-control" id="image" required name="image" [(ngModel)]="image">
+                                <input type="file" class="form-control" id="image" required name="image"
+                                    [(ngModel)]="image">
                             </div>
-                            <input type="hidden" value="Porteur" name="role" [(ngModel)]="role"/>
+                            <input type="hidden" value="Porteur" name="role" [(ngModel)]="role" />
                             <div class="form-group">
                                 <button type="submit" class="form-control btn btn-primary rounded submit px-3 fw-bold "
                                     (click)="inscription()">S'incrire</button>
@@ -111,9 +125,9 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
 <!-- formulaire d'inscription du bailleur -->
-<section class="ftco-section" *ngIf="formBailleur">
+<!-- <section class="ftco-section" *ngIf="formBailleur">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-12 col-lg-10">
@@ -179,7 +193,7 @@
                                         id="description"></textarea>
                                 </div>
                             </div>
-                            <input type="hidden"  value="Bailleur" name="role"  [(ngModel)]="role"/>
+                            <input type="hidden" value="Bailleur" name="role" [(ngModel)]="role" />
                             <div class="form-group">
                                 <button type="submit" class="form-control btn btn-primary rounded submit px-3 fw-bold "
                                     (click)="inscription()">S'incrire</button>
@@ -190,6 +204,4 @@
             </div>
         </div>
     </div>
-</section>
-<!-- footer -->
-<app-footer></app-footer>
+</section> -->

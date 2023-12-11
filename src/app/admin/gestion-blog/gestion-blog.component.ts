@@ -16,6 +16,8 @@ export class GestionBlogComponent {
   articlePhoto: string = "";
   descriptionArticle: string = "";
   selectedArticle: Article | null = null;
+
+
   
 
   isEditing: boolean = false;
@@ -29,7 +31,6 @@ export class GestionBlogComponent {
   ngOnInit(): void {
     this.loadArticles();
   }
-
 
 
   // Récupération des articles 
@@ -59,6 +60,9 @@ export class GestionBlogComponent {
       };
 
       this.articleService.addArticle(newArticle).subscribe(() => {
+
+        this.articles.unshift(newArticle);
+
         this.alertMessage("success","Bravo!","Article ajouté avec succés");
         this.loadArticles();
       });
@@ -126,7 +130,6 @@ export class GestionBlogComponent {
     });
   }
 
-
   
   // Message d'alerte
   alertMessage(icon: any, title: any, text: any){
@@ -136,7 +139,6 @@ export class GestionBlogComponent {
       text: text,
     });
   }
-
 
 }
 

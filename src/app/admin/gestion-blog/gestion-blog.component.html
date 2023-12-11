@@ -58,7 +58,7 @@
 
 
 
-<!-- debut modelle d'ajoute d'un article dans le blog --> 
+<!-- debut model d'ajoute d'un article dans le blog --> 
   <div class="modal fade" id="ajoutArticle" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -72,11 +72,16 @@
                 <label for="titreArticle">Titre de l'article:</label>
                 <input class="form-control" type="text" id="titreArticle" name="titreArticle" [(ngModel)]="titreArticle" required>
               </div>
+
+              <div class="mb-4">
+                <label for="inputImage" class="form-label fw-bold">Image</label>
+                <input type="file" class="form-control" id="inputGroupFile02" name="articlePhoto" [(ngModel)]="articlePhoto">
+              </div>
             
-              <div class="mb-3">
+              <!-- <div class="mb-3">
                 <label for="articlePhoto">Photo de l'article:</label>
                 <input class="form-control" type="text" id="articlePhoto" name="articlePhoto" [(ngModel)]="articlePhoto" required>
-              </div>
+              </div> -->
             
               <div class="mb-3">
                 <label for="descriptionArticle">Description de l'article:</label>
@@ -90,7 +95,7 @@
       </div>
     </div>
   </div>
-<!-- fin du modelle d'ajoute d'un article dans le blog -->
+<!-- fin du model d'ajoute d'un article dans le blog -->
 
 
 

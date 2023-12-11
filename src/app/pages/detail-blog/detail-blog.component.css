@@ -1,102 +1,45 @@
-.popup1 {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
+
+#sectiondetails{
     width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    z-index: 100;
+    height: 120vh;
+    box-sizing: border-box;
 }
-.popup2 {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    z-index: 100;
-}
-.popup3 {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    z-index: 100;
-}
-.popup4 {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    z-index: 100;
-}
-.popup5 {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    z-index: 100;
-}
-.popup6 {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    z-index: 100;
+#sectiondetails h1{
+    color: #E75761;
+
 }
 
 .popup-content {
     background-color: #fff;
     width: 80%;
-    height: 95vh;
-    /* max-width: 400px; */
+    height: 150vh;
+    max-width: 400px;
     margin: 0 auto;
-    /* margin-top: 20%; */
+    margin-top: 20%;
     padding: 20px;
-    border: 1px solid #333;
+    /* border: 1px solid #333; */
     border-radius: 5px;
     position: relative;
 }
 
-.close {
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 10px;
-    cursor: pointer;
-}
 .divContainDArticle{
     /* border: 1px solid red; */
     display: grid;
     grid-template-columns: 1fr 1fr;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 25px;
     width: 90%;
-    height: 85vh;
+    height: 100vh;
     margin: 0 auto;
 
 }
 .comContain{
     /* border: 1px solid rgb(53, 8, 8); */
     width: 100%;
-    height: 100%;
-    overflow: auto;
+    /* height: 100%; */
+    overflow: hidden;
     margin: 0 auto;
-    /* justify-content: center; */
+    justify-content: center;
     /* text-align: center; */
 }
 
@@ -113,7 +56,7 @@
 .divCommentaire{
     /* border: 1px solid rgb(255, 0, 76); */
     width: 100%;
-    height: 70%;
+    height: 40%;
     overflow: auto;
     /* overflow-y: auto; */
 }
@@ -132,10 +75,10 @@
     font-size: var(--defaulFontSize);
 
 }
-.divDetailArticles iframe{
+.divDetailArticles img{
     width: 470px;
     height: 450px;
-    /* margin: 0 auto; */
+    margin: 0 auto;
 
 }
 .divDetailArticles p{
@@ -150,6 +93,10 @@
     font-size: var(--defaulFontSize);
     color: var(--baseColor);
 }
+.commentform{
+    margin-top: 25px;
+    width: 90%;
+}
 
 .divimgComentateur{
     /* border: 1px solid rgb(139, 19, 113);  */
@@ -163,7 +110,7 @@
 .divcomment{
     /* border: solid 1px lawngreen; */
     width: 90%;
-    height: 47%;
+    height: 45%;
     margin: 0 auto;
     margin: 15px;
     font-size: medium;
@@ -171,8 +118,8 @@
 .avatar{
     /* border: 1px solid rgb(139, 19, 113);  */
     display: flex;
-    /* justify-content: space-around; */
-    /* margin: 15px auto; */
+    justify-content: space-around;
+    margin: 15px auto;
     width: 75%;
     height:100%; 
     font-size: medium;
@@ -210,7 +157,7 @@
     /* border: solid black 1px; */
     width: 18em; 
     font-size: medium;
-    /* height: 80px; */
+    height: 80px;
 }
 
         
@@ -222,8 +169,8 @@
         justify-content: center;
         display: grid; 
         grid-template-columns: 1fr;
-        /* column-gap: 10px; */
-        /* row-gap: 10px; */
+        column-gap: 10px;
+        row-gap: 10px;
         flex-wrap: wrap;
         font-size: medium;
     

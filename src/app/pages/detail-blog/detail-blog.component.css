@@ -54,6 +54,7 @@
 }
 
 .divCommentaire{
+    background-color: beige;
     /* border: 1px solid rgb(255, 0, 76); */
     width: 100%;
     height: 40%;
@@ -63,9 +64,32 @@
 .divinputComenter{
     /* border: 1px solid rgb(0, 123, 255); */
     width: 100%;
-    height: 30%; 
+    height: 60%; 
     margin-left: 15px;
 }
+.divinputComenter h4{
+    margin: 20px auto;
+    text-align: center;
+}
+
+.rect {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background-color: #E75761 !important;
+    z-index: -1;
+}
+
+.rect1 {
+    top: -20px;
+    right: -20px;
+}
+
+.rect2 {
+    bottom: -20px;
+    left: -20px;
+}
+
 #submit{
     background-color: var(--baseColor);
     color: #fff;
@@ -78,7 +102,7 @@
 .divDetailArticles img{
     width: 470px;
     height: 450px;
-    margin: 0 auto;
+    margin: 15px auto;
 
 }
 .divDetailArticles p{

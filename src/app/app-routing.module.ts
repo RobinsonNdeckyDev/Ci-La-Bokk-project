@@ -40,7 +40,8 @@ const routes: Routes = [
   { path: 'lise-investissement-bailleur', component: ListeInvestissementBailleurComponent},
   { path: 'inscriptionBailleur', component: InscriptionBailleurComponent},
   { path: 'inscriptionPorteur', component: InscriptionPorteurComponent},
-  { path: 'admin', component: DashboardAdminComponent}
+  { path: 'admin', component: DashboardAdminComponent},
+  { path: 'dashboard/:userId', component: DashboardAdminComponent}
 
 ];
 

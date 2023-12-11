@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { User } from 'src/app/Models/user.model';
 import { UtilisateurServiceService } from 'src/app/services/utilisateur-service.service';
 import Swal from 'sweetalert2';
@@ -26,7 +26,7 @@ export class InscriptionBailleurComponent {
   idLastUser: any = 0;
 
 
-  constructor(private userService: UtilisateurServiceService, private route: ActivatedRoute){}
+  constructor(private userService: UtilisateurServiceService, private route: Router){}
 
   ngOnInit(): void {
     this.loadUsers();
@@ -61,28 +61,37 @@ export class InscriptionBailleurComponent {
     }else{
       
       // Notre variable newArticle pour ajouter un nouveau article
-      const newBailleur: 
-      User = { 
-        id: this.idLastUser +1,
+     
+      const newBailleur : User = { 
         name: this.nom,
         email: this.email,
         password: this.password,
         image: this.image,
         telephone: this.telephone,
         description: this.description,
-        organisme: this.organisation,
-        role: this.role, 
+        organisation: this.organisation,
+        role: "Bailleur", 
       };
+
+      console.log("User à ajouter");
+      console.log(newBailleur);
 
       // On cherche si le user existe dans le local Storage tabUsers
       let userExist = this.tabUtilisateurs.find((item: any) => item.email== this.email);
+
 
       if (userExist) {
         // Si il n'existe pas
         this.alertMessage('error','Attention','Ce compte existe déja');
       } else {
-        // Si il existe on ajoute l'obet user dans le tableau du local Storage tabUsers
-        this.tabUtilisateurs.push(newBailleur);  
+
+        // this.tabUtilisateurs.push(newBailleur);
+          this.userService.addUser(newBailleur).subscribe(() => {
+          this.alertMessage("success","Bravo!","Inscription réussie avec succés");
+          this.loadUsers();
+          this.route.navigate(['/login']);
+        });
+
       }
 
     }
@@ -102,13 +111,3 @@ export class InscriptionBailleurComponent {
   }
 
 }
-
-
-
-      // this.userService.addUser(newBailleur).subscribe(() => {
-
-      //   // this.tabUtilisateurs.unshift(newBailleur);
-
-      //   this.alertMessage("success","Bravo!","Inscription réussie avec succés");
-      //   this.loadUsers();
-      // });

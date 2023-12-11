@@ -52,8 +52,7 @@ export class GestionBlogComponent {
       this.alertMessage("error","Attention","Merci d'ajouter la description de l'article");
     }else{
       // Notre variable newArticle pour ajouter un nouveau article
-      const newArticle: 
-      Article = { 
+      const newArticle : Article = { 
         titre: this.titreArticle, 
         photo: this.articlePhoto, 
         description: this.descriptionArticle 

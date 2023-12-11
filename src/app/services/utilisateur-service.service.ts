@@ -8,7 +8,7 @@ import { User } from '../Models/user.model';
 })
 export class UtilisateurServiceService {
 
-  private apiUrl = "http://[::1]:3000/users";
+  private apiUrl = "https://silabok.mouhamadoufaye.tech";
 
   constructor(private http: HttpClient) {}
 
@@ -21,13 +21,13 @@ export class UtilisateurServiceService {
     return this.http.get<User>(url);
   }
 
-  addUser(article: User): Observable<User> {
-    return this.http.post<User>(this.apiUrl, article);
+  addUser(user: User): Observable<User> {
+    return this.http.post<User>(this.apiUrl, user);
   }
 
-  updateUser(article: User): Observable<User> {
-    const url = `${this.apiUrl}/${article.id}`;
-    return this.http.put<User>(url, article);
+  updateUser(user: User): Observable<User> {
+    const url = `${this.apiUrl}/${user.id}`;
+    return this.http.put<User>(url, user);
   }
 
   deleteUser(id: number): Observable<void> {

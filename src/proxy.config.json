@@ -1,0 +1,8 @@
+{
+"/api/*": {
+"target": "https://silabok.mouhamadoufaye.tech/api",
+"secure": false,
+"logLevel": "debug",
+"changeOrigin": true
+}
+}

@@ -11,22 +11,19 @@ import Swal from 'sweetalert2';
 })
 export class LoginComponent implements OnInit{
 
-  // Tableau articles
-  utilisateurs: User[] = [];
-
   // attributs
   email: string = "";
   password: string = "";
   role: string = ""; 
 
   // tableaux
-  tabUsers: any;
+  tabUsers: any = [];
   currentUser: any;
 
-  formChoice = true;
-
-
-  constructor(private userService: UtilisateurServiceService,private route: Router){}
+ 
+  constructor(private userService: UtilisateurServiceService, private route: Router){
+    this.loadUsers();
+  }
 
   ngOnInit(): void {
     this.loadUsers();
@@ -36,8 +33,9 @@ export class LoginComponent implements OnInit{
   // Récupération des articles 
   loadUsers() {
       this.userService.getUsers().subscribe((data) => {
-      this.utilisateurs = data;
-      console.log(this.utilisateurs);
+      this.tabUsers = data;
+      console.log("ddddddddd");
+      console.log(this.tabUsers);
     });
   }
 
@@ -62,26 +60,34 @@ export class LoginComponent implements OnInit{
     else if (this.tabUsers.length == 0) {
       this.verifInfos("Erreur!", "Ce compte n'existe pas", "error");
     }
+    // else if (!this.tabUsers || this.tabUsers.length === 0) {
+    // this.verifInfos("Erreur!", "Aucun utilisateur trouvé", "error");
+    // }
     else {
-      this.currentUser = this.tabUsers.find((element: any) => (element.email == this.email && element.password == this.password))
-      if (this.currentUser) {
-        this.verifInfos("Cool!", "Bienvenu dans votre espace de travail ", "success");
-        if (this.currentUser.role === 'Bailleur') {
-          this.route.navigate(['/dashboardBailleur', this.currentUser.idUser]);
+      this.currentUser = this.tabUsers.find((element: any) => (element.email == this.email));
+      console.log(this.currentUser);
+      if(this.currentUser){
+
+        this.verifInfos("super","utilisateur trouvé", "success");
+        if(this.currentUser.email == "binta@gmail.com" && this.currentUser.password == "123456"){
+          this.route.navigate(['/admin']);
         }
-        else if (this.currentUser.role === 'Porteur') {
-          this.route.navigate(['/ajout', this.currentUser.idUser]);   
+         else if(this.currentUser.role == "Admin"){
+          this.route.navigate(['/dashboard']);
         }
-        else if (this.currentUser.role === 'Admin') {
-          this.route.navigate(['/dashboard', this.currentUser.idUser]);
+        else if (this.currentUser.role == "Bailleur") {
+          this.route.navigate(['/dashboardbailleur']);
         }
-        else {
-          this.verifInfos("Erreur!", "Ce compte n'existe pas", "error");
+         else{
+          this.verifInfos("Attention","utilisateur non connecté", "error");
         }
+
+        // Utiliser l'ID de l'utilisateur ici
+        const userId = this.currentUser.id;
+        console.log("ID de l'utilisateur connecté :", userId);
       }
-      else {
-        this.verifInfos("Erreur!", "Ce compte n'existe pas", "error");
-      }
+      
+      
     }
   }
 
@@ -95,11 +101,11 @@ export class LoginComponent implements OnInit{
     })
   }
 
-  ShowForm() {
-    this.email = "";
-    this.password = "";
-    this.formChoice = !this.formChoice;
-  }
+  // ShowForm() {
+  //   this.email = "";
+  //   this.password = "";
+  //   this.formChoice = !this.formChoice;
+  // }
 }
 
 

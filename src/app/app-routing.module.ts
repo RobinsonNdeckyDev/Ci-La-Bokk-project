@@ -17,6 +17,7 @@ import { ListeProjetsBailleurComponent } from './bailleur/liste-projets-bailleur
 import { ProfilBailleurComponent } from './bailleur/profil-bailleur/profil-bailleur.component';
 import { InvestissementPorteurComponent } from './porteur-projet/investissement-porteur/investissement-porteur.component';
 import { DetailProjetComponent } from './porteur-projet/detail-projet/detail-projet.component';
+import { DetailBlogComponent } from './pages/detail-blog/detail-blog.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/accueil', pathMatch: 'full' }, // Redirection par défaut
@@ -36,7 +37,8 @@ const routes: Routes = [
   { path: 'projetsBailleur', component: ListeProjetsBailleurComponent},
   { path: 'profilBailleur', component: ProfilBailleurComponent},
   { path: 'liste-investissement-porteur', component: InvestissementPorteurComponent},
-  { path: 'detail-projet/:id', component: DetailProjetComponent}
+  { path: 'detail-projet/:id', component: DetailProjetComponent},
+  { path: 'detail-Blog', component: DetailBlogComponent}
 
 
 

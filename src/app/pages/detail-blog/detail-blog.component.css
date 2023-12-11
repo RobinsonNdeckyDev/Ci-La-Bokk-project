@@ -81,11 +81,13 @@
 }
 
 .rect1 {
+    background-color: #E75761 !important;
     top: -20px;
     right: -20px;
 }
 
 .rect2 {
+    background-color: #E75761 !important;
     bottom: -20px;
     left: -20px;
 }
@@ -164,7 +166,7 @@
     #articleItems{
         margin: 0 auto;
         display: grid; 
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1frg;
         column-gap: 10px;
         row-gap: 10px;
         flex-wrap: wrap;

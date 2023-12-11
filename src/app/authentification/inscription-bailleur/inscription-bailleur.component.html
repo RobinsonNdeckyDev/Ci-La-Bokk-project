@@ -29,30 +29,26 @@
                             <div class="form-group mb-3">
                                 <label class="label" for="nom">Prenom & Nom</label>
                                 <input type="text" class="form-control" placeholder="Nom" required name="nom"
-                                   >
-                                    <!-- [(ngModel)]="nom" -->
+                                    [(ngModel)]="nom">
                             </div>
                             <div class="form-group mb-3">
                                 <label class="label" for="email">Email</label>
                                 <input type="text" class="form-control" placeholder="Email" required name="email"
-                                    >
-                                    <!-- [(ngModel)]="email" -->
+                                   [(ngModel)]="email" >
                             </div>
                             <div class="form-group mb-3">
                                 <label class="label" for="password">Mot de passe</label>
                                 <input type="password" class="form-control" placeholder="mot de passe" required
-                                    name="password">
-                                    <!-- [(ngModel)]="password" -->
+                                    name="password" [(ngModel)]="password">
                             </div>
                             <div class="form-group mb-3">
                                 <label class="label" for="telephone">Telephone</label>
                                 <input type="text" class="form-control" placeholder="Telephone" required
-                                    name="telephone">
-                                    <!-- [(ngModel)]="telephone" -->
+                                    name="telephone" [(ngModel)]="telephone">
                             </div>
                             <div class="form-group mb-3">
                                 <label class="label" for="prenom">Organisation</label>
-                                <select class="form-select" aria-label="Default select example" hidden>
+                                <select [(ngModel)]="organisation" name="organisation" class="form-select" aria-label="Default select example">
                                     <option selected>vous etes...</option>
                                     <option value="1">Organisme</option>
                                     <option value="2">ONG</option>
@@ -62,22 +58,19 @@
                             <div class="form-group mb-3">
                                 <label class="label" for="prenom">Image</label>
                                 <input type="file" class="form-control" id="inputGroupFile02" required name="image"
-                                   >
-                                    <!-- [(ngModel)]="image" -->
+                                   [(ngModel)]="image">
                             </div>
                             <div class="mb-4">
                                 <label for="inputDescription" class="form-label fw-bold">Description</label>
                                 <div class="form-floating">
                                     <textarea class="form-control" placeholder="description" name="description"
-                                        id="description"></textarea>
+                                        id="description" [(ngModel)]="description"></textarea>
                                 </div>
                             </div>
-                            <input type="hidden" value="Bailleur" name="role" />
-                            <!-- [(ngModel)]="role" -->
+                            <input type="hidden" value="Bailleur" name="role" [(ngModel)]="role" />
                             <div class="form-group">
                                 <button type="submit" class="form-control btn btn-primary rounded submit px-3 fw-bold "
-                                    >S'incrire</button>
-                                    <!-- (click)="inscription()" -->
+                                    (click)="addBailleur()">S'incrire</button>
                             </div>
                         </form>
                     </div>

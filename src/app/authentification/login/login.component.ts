@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { User } from 'src/app/Models/user.model';
+import { UtilisateurServiceService } from 'src/app/services/utilisateur-service.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -8,22 +10,13 @@ import Swal from 'sweetalert2';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit{
-  
-  constructor(private route: Router){}
 
-  ngOnInit(): void {
-    
-  }
+  // Tableau articles
+  utilisateurs: User[] = [];
 
   // attributs
-  nom: string = "";
-  prenom: string = "";
   email: string = "";
   password: string = "";
-  image: string = "";
-  telephone: string = "";
-  nomComplet: string = "";
-  formBailleur = false;
   role: string = ""; 
 
   // tableaux
@@ -32,10 +25,27 @@ export class LoginComponent implements OnInit{
 
   formChoice = true;
 
+
+  constructor(private userService: UtilisateurServiceService,private route: Router){}
+
+  ngOnInit(): void {
+    this.loadUsers();
+  }
+
+
+  // Récupération des articles 
+  loadUsers() {
+      this.userService.getUsers().subscribe((data) => {
+      this.utilisateurs = data;
+      console.log(this.utilisateurs);
+    });
+  }
+
+
+
+  
   // fonction qui permet de vider les champs
   viderChamps() {
-    this.nom = "";
-    this.prenom = "";
     this.email = "";
     this.password = "";
   }
@@ -44,8 +54,10 @@ export class LoginComponent implements OnInit{
 
   login() {
     //  On verifie si les champs contiennent de l'information 
-    if (this.email == "" || this.password == "") {
-      this.verifInfos("Erreur!", "Veuillez remplir les champs", "error");
+    if (this.email == "") {
+      this.verifInfos("Erreur!", "Veuillez renseigner l'email", "error");
+    }else if(this.password == ""){
+      this.verifInfos("Erreur!", "Veuillez renseigner le mot de passe", "error");
     }
     else if (this.tabUsers.length == 0) {
       this.verifInfos("Erreur!", "Ce compte n'existe pas", "error");

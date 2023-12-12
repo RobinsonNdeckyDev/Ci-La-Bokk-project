@@ -33,7 +33,7 @@ const routes: Routes = [
   { path: 'listeporteur', component: ListeInvestissementsComponent },
   { path: 'profilporteur', component: ProfilPorteurComponent },
   { path: 'dashboard', component: DashboardAdminComponent, canActivate: [AuthGuard] },
-  { path: 'dashboardbailleur', component: ListeInvestissementBailleurComponent, canActivate: [AuthGuard] },
+  { path: 'dashboardbailleur', component: ListeInvestissementBailleurComponent},
   { path: 'projetsBailleur', component: ListeProjetsBailleurComponent},
   { path: 'profilBailleur', component: ProfilBailleurComponent},
   { path: 'liste-investissement-porteur', component: InvestissementPorteurComponent},
@@ -41,9 +41,9 @@ const routes: Routes = [
   { path: 'admin', component: DashboardAdminComponent, canActivate: [AuthGuard] },
   { path: 'dashboard/:userId', component: DashboardAdminComponent},
   { path: 'login', component: LoginComponent},
-  { path: 'inscriptionBailleur', component: InscriptionBailleurComponent, canActivate: [AuthGuard] },
-  { path: 'inscriptionPorteur', component: InscriptionPorteurComponent , canActivate: [AuthGuard] },
-  { path: 'dasboardPorteur', component: AjoutProjetComponent, canActivate: [AuthGuard] },
+  { path: 'inscriptionBailleur', component: InscriptionBailleurComponent},
+  { path: 'inscriptionPorteur', component: InscriptionPorteurComponent},
+  { path: 'dasboardPorteur', component: AjoutProjetComponent},
 
 ];
 

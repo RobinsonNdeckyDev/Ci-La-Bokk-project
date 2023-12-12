@@ -16,7 +16,7 @@ export class InscriptionBailleurComponent {
   password: string= "";
   telephone: string= "";
   image: string = "";
-  organisation: string = "";
+  organisme: string = "";
   description: string = "";
   role: string = "";
 
@@ -64,7 +64,7 @@ export class InscriptionBailleurComponent {
         password:this.password,
         telephone: this.telephone,
         image: this.image,
-        organisation: this.organisation,
+        organisme: this.organisme,
         description: this.description,
         role: "Bailleur"
       };

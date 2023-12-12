@@ -75,6 +75,10 @@
     font-weight: bold;
 }
 
+.TitreMode{
+    color: black !important;
+}
+
 .textimg{
     position: absolute;
     top: 40%;

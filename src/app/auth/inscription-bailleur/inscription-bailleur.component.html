@@ -29,27 +29,27 @@
                         <form action="#" class="signin-form">
                             <div class="form-group mb-3">
                                 <label class="label" for="nom">Prenom & Nom</label>
-                                <input type="text" class="form-control" placeholder="Nom" required name="nom"
+                                <input type="text" class="form-control" id="nom" placeholder="Nom" required name="nom"
                                     [(ngModel)]="nom">
                             </div>
                             <div class="form-group mb-3">
                                 <label class="label" for="email">Email</label>
-                                <input type="text" class="form-control" placeholder="Email" required name="email"
+                                <input type="text" class="form-control" id="email" placeholder="Email" required name="email"
                                     [(ngModel)]="email">
                             </div>
                             <div class="form-group mb-3">
                                 <label class="label" for="password">Mot de passe</label>
-                                <input type="password" class="form-control" placeholder="mot de passe" required
+                                <input type="password" class="form-control" placeholder="mot de passe" required id="password"
                                     name="password" [(ngModel)]="password">
                             </div>
                             <div class="form-group mb-3">
                                 <label class="label" for="telephone">Telephone</label>
-                                <input type="text" class="form-control" placeholder="Telephone" required
+                                <input type="text" class="form-control" placeholder="Telephone" required id="telephone"
                                     name="telephone" [(ngModel)]="telephone">
                             </div>
                             <div class="form-group mb-3">
-                                <label class="label" for="prenom">Organisation</label>
-                                <select [(ngModel)]="organisation" class="form-select" aria-label="Default select example">
+                                <label class="label" for="organisme">Organisation</label>
+                                <select [(ngModel)]="organisme" id="organisme" class="form-select" name="organisme" aria-label="Default select example">
                                     <option selected>vous etes...</option>
                                     <option value="1">Organisme</option>
                                     <option value="2">ONG</option>
@@ -57,12 +57,12 @@
                                 </select>
                             </div>
                             <div class="form-group mb-3">
-                                <label class="label" for="prenom">Image</label>
-                                <input type="text" class="form-control" id="inputGroupFile02" required name="image"
+                                <label class="label" for="image">Image</label>
+                                <input type="text" class="form-control" id="image" required name="image"
                                     [(ngModel)]="image">
                             </div>
                             <div class="mb-4">
-                                <label for="inputDescription" class="form-label fw-bold">Description</label>
+                                <label for="description" class="form-label fw-bold">Description</label>
                                 <div class="form-floating">
                                     <textarea [(ngModel)]="description" class="form-control" placeholder="description" name="description"
                                         id="description"></textarea>

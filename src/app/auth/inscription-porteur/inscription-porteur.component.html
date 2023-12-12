@@ -30,27 +30,27 @@
                         <form action="#" class="signin-form">
                             <div class="form-group mb-3">
                                 <label class="label" for="nomComplet">Prenom & Nom</label>
-                                <input type="text" class="form-control" placeholder="Prenon et Nom" required
-                                    name="nomComplet" [(ngModel)]="nom">
+                                <input type="text" class="form-control" id="nomComplet" placeholder="Prenon et Nom" required
+                                    name="nom" [(ngModel)]="nom">
                             </div>
                             <div class="form-group mb-3">
                                 <label class="label" for="email">Email</label>
-                                <input type="text" class="form-control" placeholder="Email" required name="email"
+                                <input type="text" class="form-control" placeholder="Email" required name="email" id="email"
                                     [(ngModel)]="email">
                             </div>
                             <div class="form-group mb-3">
                                 <label class="label" for="password">Mot de passe</label>
-                                <input type="password" class="form-control" placeholder="mot de passe" required
+                                <input type="password" class="form-control" placeholder="mot de passe" required id="password"
                                     name="password" [(ngModel)]="password">
                             </div>
                             <div class="form-group mb-3">
                                 <label class="label" for="telephone">Telephone</label>
-                                <input type="text" class="form-control" placeholder="Telephone" required
+                                <input type="text" class="form-control" placeholder="Telephone" required id="telephone"
                                     name="telephone" [(ngModel)]="telephone">
                             </div>
                             <div class="form-group mb-3">
                                 <label class="label" for="description">Description</label>
-                                <input type="text" class="form-control" placeholder="description" required name="description" [(ngModel)]="description">
+                                <input type="text" class="form-control" id="description" placeholder="description" required name="description" [(ngModel)]="description">
                             </div>
                             <div class="form-group mb-3">
                                 <label class="label" for="image">Image</label>

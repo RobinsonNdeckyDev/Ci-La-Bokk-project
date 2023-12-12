@@ -1,13 +1,18 @@
-.imgheader img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+
 
 .imgheader {
+
+.imgheader img{
+    width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.imgheader{
+
     /* border: #E75761 solid 2px; */
     height: 80vh;
 }
+
 
 .container {
     display: flex;
@@ -18,16 +23,32 @@
     flex-wrap: wrap;
     gap: 150px 80px;
     padding: 100px 50px;
+
+.container{
+    display: flex;
+    justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+    margin: 0 auto;
+    flex-wrap: wrap;
+	gap: 150px 80px;
+	padding: 100px 50px;
+
     box-sizing: border-box;
 
 }
 
+
 .container .card {
+
+.container .card{
+
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0 auto;
+
     width: 350px;
     height: 500px;
     /* border: solid 2px black; */
@@ -36,6 +57,15 @@
 }
 
 .container .card .card_imagen {
+=======
+	width: 350px;
+	height: 500px;
+	/* border: solid 2px black; */
+	/* border-radius: 25px; */
+    box-sizing: border-box;
+}
+.container .card .card_imagen{
+
     position: relative;
     width: 100%;
     /* border: solid 1px navy; */
@@ -46,15 +76,23 @@
 
 }
 
-.container .card .card_imagen img {
+
+.container .card .card_imagen img{
+
     width: 100%;
     height: 100%;
     border-radius: 25px;
     object-fit: cover;
+
     top: -15px;
 }
 
 .container .card .card_content {
+
+    top: -15px;    
+}
+.container .card .card_content{
+
     position: absolute;
     width: 80%;
     height: 40%;
@@ -70,23 +108,28 @@
 
 }
 
-.container .card .card_content h2 {
-    font-size: 1.2em;
-    font-weight: 700;
-    color: #E75761;
+.container .card .card_content h2 
+{
+	font-size: 1.2em;
+	font-weight: 700;
+	color: #E75761;
     text-align: center;
 }
 
-.container .card .card_content p {
+.container .card .card_content p{
     text-align: center;
     color: black;
 }
+#btndetails{
+    margin:0 auto;
 
-#btndetails {
-    margin: 0 auto;
     width: 90px;
     background-color: #308AA7;
     border-radius: 5px;
     color: white;
     border: none;
+
 }
+
+}
+

@@ -15,10 +15,15 @@ import { ListeInvestissementBailleurComponent } from './bailleur/liste-investiss
 import { ListeProjetsBailleurComponent } from './bailleur/liste-projets-bailleur/liste-projets-bailleur.component';
 import { ProfilBailleurComponent } from './bailleur/profil-bailleur/profil-bailleur.component';
 import { InvestissementPorteurComponent } from './porteur-projet/investissement-porteur/investissement-porteur.component';
+
 import { LoginComponent } from './auth/login/login.component';
 import { InscriptionBailleurComponent } from './auth/inscription-bailleur/inscription-bailleur.component';
 import { InscriptionPorteurComponent } from './auth/inscription-porteur/inscription-porteur.component';
 import { AuthGuard } from './gardes/auth.guard';
+
+import { DetailProjetComponent } from './porteur-projet/detail-projet/detail-projet.component';
+import { DetailBlogComponent } from './pages/detail-blog/detail-blog.component';
+
 
 const routes: Routes = [
   { path: '', redirectTo: '/accueil', pathMatch: 'full' }, // Redirection par défaut
@@ -37,6 +42,7 @@ const routes: Routes = [
   { path: 'projetsBailleur', component: ListeProjetsBailleurComponent},
   { path: 'profilBailleur', component: ProfilBailleurComponent},
   { path: 'liste-investissement-porteur', component: InvestissementPorteurComponent},
+
   { path: 'lise-investissement-bailleur', component: ListeInvestissementBailleurComponent},
   { path: 'admin', component: DashboardAdminComponent, canActivate: [AuthGuard] },
   { path: 'dashboard/:userId', component: DashboardAdminComponent},
@@ -44,6 +50,11 @@ const routes: Routes = [
   { path: 'inscriptionBailleur', component: InscriptionBailleurComponent},
   { path: 'inscriptionPorteur', component: InscriptionPorteurComponent},
   { path: 'dasboardPorteur', component: AjoutProjetComponent},
+
+  { path: 'detail-projet/:id', component: DetailProjetComponent},
+  { path: 'detail-Blog', component: DetailBlogComponent}
+
+
 
 ];
 

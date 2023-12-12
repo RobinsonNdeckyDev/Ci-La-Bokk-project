@@ -2,11 +2,18 @@
 
 * {
 
+
     box-sizing: border-box;
 
 }
 
 .side-menu {
+
+    box-sizing: border-box;
+    
+}
+.side-menu{
+
     margin: 0;
     padding: 0;
 }
@@ -36,9 +43,15 @@ li {
     --light-orange: #FFE0D3;
 }
 
+
 html {
     overflow-x: hidden;
 }
+
+=======
+    html {
+        overflow-x: hidden;
+    }
 
 
 
@@ -723,7 +736,9 @@ html {
     width: 35%;
 }
 
-.btn-ajoutProjet {
+
+.btn-ajoutProjet{
+
     border: 0;
     background-color: #E75761;
     color: white;
@@ -731,6 +746,7 @@ html {
     width: 20%;
     padding: 4px;
 }
+
 
 .form input,
 textarea {
@@ -742,6 +758,15 @@ textarea {
 }
 
 .btn-modif {
+
+.form input,textarea {
+    border: 1px solid #E75761;
+}
+.form input::placeholder{
+    color: rgb(220, 220, 220);
+}
+.btn-modif{
+
     border: 0;
     background-color: #308AA7;
     color: white;
@@ -750,7 +775,11 @@ textarea {
     padding: 4px;
 }
 
+
 .btn-sup {
+
+.btn-sup{
+
     border: 0;
     background-color: #E75761;
     color: white;
@@ -759,7 +788,9 @@ textarea {
     padding: 4px;
 }
 
-@media screen and (max-width: 768px) {
+
+@media screen and (max-width: 768px){
+
     .contain-card {
         display: grid;
         grid-template-columns: 2fr;
@@ -774,6 +805,7 @@ textarea {
         gap: 10px;
     }
 }
+
 
 /* stylisation CartesProjets */
 #cardProjetContain {
@@ -790,3 +822,17 @@ textarea {
 #cartpojet {
     border: none;
 }
+=======
+/* stylisation CartesProjets */
+#cardProjetContain{
+    border-radius: 25px;
+    border: 1px solid #E75761;;
+    padding: 20px;
+}
+#cardProjetContain img{
+    border-radius: 25px;
+}
+#cartpojet{
+    border: none;
+}
+

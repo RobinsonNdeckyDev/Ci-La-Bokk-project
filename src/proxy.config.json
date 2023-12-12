@@ -1,6 +1,6 @@
 {
 "/api/*": {
-"target": "https://silabok.mouhamadoufaye.tech/api",
+"target": "https://http://127.0.0.1:8000/api",
 "secure": false,
 "logLevel": "debug",
 "changeOrigin": true

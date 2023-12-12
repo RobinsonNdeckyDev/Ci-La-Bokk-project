@@ -17,7 +17,7 @@
 
     <!-- SIDEBAR -->
     <section id="sidebar">
-        <a class="brand">
+        <a class="brand" routerLink="/dashboard">
             <img src="../../../assets/images/logo.png" alt="" height="80px" class="m-0 m-auto ">
         </a>
         <hr class="border">
@@ -83,9 +83,9 @@
 
             </li>
             <li>
-                <a class="logout">
+                <a class="logout" routerLink="/login">
                     <i class='bx bxs-log-out-circle'></i>
-                    <span class="text">Se deconnecter</span>
+                    <span class="text" (click)="logout()">Se deconnecter</span>
                 </a>
             </li>
         </ul>

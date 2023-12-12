@@ -8,11 +8,10 @@ import { Article } from '../Models/article.model';
 })
 export class ArticleService {
 
-  // private apiUrl = "http://[::1]:3000/articles";
+  private apiUrl = "http://[::1]:3000/articles";
   
-
-  // L'url
-    private apiUrl = "https://silabok.mouhamadoufaye.tech/api";
+  
+  // private apiUrl = "https://127.0.1.8000/api";
 
 
   constructor(private http: HttpClient) {}
@@ -27,7 +26,7 @@ export class ArticleService {
   }
 
   addArticle(article: Article): Observable<Article> {
-    return this.http.post<Article>(`${this.apiUrl}/ajouterArticle`, article);
+    return this.http.post<Article>(this.apiUrl, article);
   }
 
   updateArticle(article: Article): Observable<Article> {

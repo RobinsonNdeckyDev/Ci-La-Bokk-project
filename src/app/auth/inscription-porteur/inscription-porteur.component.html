@@ -1,6 +1,6 @@
+<!-- Header -->
 <app-header class="sticky-top"></app-header>
 
-<!-- formulaire d'inscription du bailleur -->
 <section class="ftco-section">
     <div class="container">
         <div class="row justify-content-center">
@@ -17,24 +17,26 @@
                             <div class="w-100">
                                 <p class="social-media d-flex justify-content-end">
                                     <a href="#"
-                                        class="social-icon d-flex align-items-center justify-content-center"><span
-                                            class="fa fa-facebook"></span></a>
+                                        class="social-icon d-flex align-items-center justify-content-center">
+                                        <span class="fa fa-facebook"></span>
+                                    </a>
                                     <a href="#"
-                                        class="social-icon d-flex align-items-center justify-content-center"><span
-                                            class="fa fa-twitter"></span></a>
+                                        class="social-icon d-flex align-items-center justify-content-center">
+                                        <span class="fa fa-twitter"></span>
+                                    </a>
                                 </p>
                             </div>
                         </div>
                         <form action="#" class="signin-form">
                             <div class="form-group mb-3">
-                                <label class="label" for="nom">Prenom & Nom</label>
-                                <input type="text" class="form-control" placeholder="Nom" required name="nom"
-                                    [(ngModel)]="nom">
+                                <label class="label" for="nomComplet">Prenom & Nom</label>
+                                <input type="text" class="form-control" placeholder="Prenon et Nom" required
+                                    name="nomComplet" [(ngModel)]="nom">
                             </div>
                             <div class="form-group mb-3">
                                 <label class="label" for="email">Email</label>
                                 <input type="text" class="form-control" placeholder="Email" required name="email"
-                                   [(ngModel)]="email" >
+                                    [(ngModel)]="email">
                             </div>
                             <div class="form-group mb-3">
                                 <label class="label" for="password">Mot de passe</label>
@@ -47,30 +49,18 @@
                                     name="telephone" [(ngModel)]="telephone">
                             </div>
                             <div class="form-group mb-3">
-                                <label class="label" for="prenom">Organisation</label>
-                                <select [(ngModel)]="organisation" name="organisation" class="form-select" aria-label="Default select example">
-                                    <option selected>vous etes...</option>
-                                    <option value="1">Organisme</option>
-                                    <option value="2">ONG</option>
-                                    <option value="3">Particullier</option>
-                                </select>
+                                <label class="label" for="description">Description</label>
+                                <input type="text" class="form-control" placeholder="description" required name="description" [(ngModel)]="description">
                             </div>
                             <div class="form-group mb-3">
-                                <label class="label" for="prenom">Image</label>
-                                <input type="file" class="form-control" id="inputGroupFile02" required name="image"
-                                   [(ngModel)]="image">
+                                <label class="label" for="image">Image</label>
+                                <input type="text" class="form-control" id="image" required name="image"
+                                    [(ngModel)]="image">
                             </div>
-                            <div class="mb-4">
-                                <label for="inputDescription" class="form-label fw-bold">Description</label>
-                                <div class="form-floating">
-                                    <textarea class="form-control" placeholder="description" name="description"
-                                        id="description" [(ngModel)]="description"></textarea>
-                                </div>
-                            </div>
-                            <input type="hidden"  name="role" [(ngModel)]="role" />
+                            <input type="hidden" value="Porteur" name="role" [(ngModel)]="role" />
                             <div class="form-group">
                                 <button type="submit" class="form-control btn btn-primary rounded submit px-3 fw-bold "
-                                    (click)="addBailleur()">S'incrire</button>
+                                    (click)="inscription()">S'incrire</button>
                             </div>
                         </form>
                     </div>
@@ -80,4 +70,5 @@
     </div>
 </section>
 
+<!-- footer -->
 <app-footer></app-footer>

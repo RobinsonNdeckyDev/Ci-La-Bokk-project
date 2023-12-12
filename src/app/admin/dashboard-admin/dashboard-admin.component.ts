@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-dashboard-admin',
@@ -7,7 +8,7 @@ import { Component } from '@angular/core';
 })
 export class DashboardAdminComponent {
 
-
+constructor(private authService: AuthService){}
   // Gestion bouton
   boutonActif = 1;
 
@@ -25,5 +26,10 @@ export class DashboardAdminComponent {
     const script = document.createElement('script');
     script.src = '../../../assets/js/script.js'; 
     document.body.appendChild(script);
+  }
+
+  logout() {
+    // Logique de déconnexion
+    this.authService.logout();
   }
 }

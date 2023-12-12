@@ -7,5 +7,5 @@ export interface User{
     telephone: string;
     description: string;
     organisation: string;
-    role: string; 
+    role: string;
 }

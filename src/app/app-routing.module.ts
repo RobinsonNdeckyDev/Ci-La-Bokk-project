@@ -7,7 +7,6 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { BlogComponent } from './pages/blog/blog.component';
 import { ConditionUtilisationComponent } from './pages/condition-utilisation/condition-utilisation.component';
 import { PolitiqueConfidentialiteComponent } from './pages/politique-confidentialite/politique-confidentialite.component';
-import { LoginComponent } from './authentification/login/login.component';
 import { AjoutProjetComponent } from './porteur-projet/ajout-projet/ajout-projet.component';
 import { ListeInvestissementsComponent } from './porteur-projet/liste-investissements/liste-investissements.component';
 import { ProfilPorteurComponent } from './porteur-projet/profil-porteur/profil-porteur.component';
@@ -16,8 +15,10 @@ import { ListeInvestissementBailleurComponent } from './bailleur/liste-investiss
 import { ListeProjetsBailleurComponent } from './bailleur/liste-projets-bailleur/liste-projets-bailleur.component';
 import { ProfilBailleurComponent } from './bailleur/profil-bailleur/profil-bailleur.component';
 import { InvestissementPorteurComponent } from './porteur-projet/investissement-porteur/investissement-porteur.component';
-import { InscriptionBailleurComponent } from './authentification/inscription-bailleur/inscription-bailleur.component';
-import { InscriptionPorteurComponent } from './authentification/inscription-porteur/inscription-porteur.component';
+import { LoginComponent } from './auth/login/login.component';
+import { InscriptionBailleurComponent } from './auth/inscription-bailleur/inscription-bailleur.component';
+import { InscriptionPorteurComponent } from './auth/inscription-porteur/inscription-porteur.component';
+import { AuthGuard } from './gardes/auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: '/accueil', pathMatch: 'full' }, // Redirection par défaut
@@ -28,20 +29,21 @@ const routes: Routes = [
   { path: 'condition-utilisation', component: ConditionUtilisationComponent },
   { path: 'politique-confidentialite', component: PolitiqueConfidentialiteComponent },
   { path: 'contact', component: ContactComponent },
-  { path: 'login', component: LoginComponent },
   { path: 'ajout', component: AjoutProjetComponent },
   { path: 'listeporteur', component: ListeInvestissementsComponent },
   { path: 'profilporteur', component: ProfilPorteurComponent },
-  { path: 'dashboard', component: DashboardAdminComponent},
-  { path: 'dashboardbailleur', component: ListeInvestissementBailleurComponent},
+  { path: 'dashboard', component: DashboardAdminComponent, canActivate: [AuthGuard] },
+  { path: 'dashboardbailleur', component: ListeInvestissementBailleurComponent, canActivate: [AuthGuard] },
   { path: 'projetsBailleur', component: ListeProjetsBailleurComponent},
   { path: 'profilBailleur', component: ProfilBailleurComponent},
   { path: 'liste-investissement-porteur', component: InvestissementPorteurComponent},
   { path: 'lise-investissement-bailleur', component: ListeInvestissementBailleurComponent},
-  { path: 'inscriptionBailleur', component: InscriptionBailleurComponent},
-  { path: 'inscriptionPorteur', component: InscriptionPorteurComponent},
-  { path: 'admin', component: DashboardAdminComponent},
-  { path: 'dashboard/:userId', component: DashboardAdminComponent}
+  { path: 'admin', component: DashboardAdminComponent, canActivate: [AuthGuard] },
+  { path: 'dashboard/:userId', component: DashboardAdminComponent},
+  { path: 'login', component: LoginComponent},
+  { path: 'inscriptionBailleur', component: InscriptionBailleurComponent, canActivate: [AuthGuard] },
+  { path: 'inscriptionPorteur', component: InscriptionPorteurComponent , canActivate: [AuthGuard] },
+  { path: 'dasboardPorteur', component: AjoutProjetComponent, canActivate: [AuthGuard] },
 
 ];
 

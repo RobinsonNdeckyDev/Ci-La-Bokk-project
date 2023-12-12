@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { UtilisateurServiceService } from 'src/app/services/utilisateur-service.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -8,7 +9,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit{
-  constructor(private route: Router){}
+  constructor(private route: Router, private userService: UtilisateurServiceService){}
 
   ngOnInit(): void {
     
@@ -38,6 +39,12 @@ export class LoginComponent implements OnInit{
     this.email = "";
     this.password = "";
   }
+
+  getUsers(){
+    this.userService.getUsers().subscribe((reponse:any)=>{
+    })
+  }
+  
 
   inscription() {
     const emailPattern = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;

@@ -105,13 +105,18 @@
             <div class="container mt-4 p-0 ">
                 <div class="contain-card">
                     <div class="card" *ngFor="let projet of projets ">
-                        <img src="https://img.freepik.com/photos-gratuite/smiley-femme-tir-complet-tenant-tablette_23-2149894712.jpg?w=826&t=st=1702037163~exp=1702037763~hmac=09a1131237a1b454ce522e2ced8ba7720fc63e6bfc8703779ec1134ef6c8bcb9"
+                        <img [src]=projet.photo
                             class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title text-center">{{projet.nom}}</h5>
                             <p class="card-text text-center">{{projet.description}}.
                             </p>
-                            <button class="btn-detail mb-3" data-bs-toggle="modal" data-bs-target="#modalDetailProjet">Detail</button>
+                        </div>
+                        <div class="d-flex justify-content-end ">
+                            <button class="btn mb-3" (click)="editProjet(projet)" data-bs-toggle="modal" data-bs-target="#modalModifierProjet"><i class="bi bi-pencil-square"></i></button>
+                            <button class="btn mb-3" (click)="deleteProjet(projet.id)"><i class="bi bi-trash3"></i></button>
+                            <button class="btn mb-3" data-bs-toggle="modal" data-bs-target="#modalDetailProjet" (click)="showProjetDetails(projet)"><i class="bi bi-eye"></i></button>
+                            
                         </div>
                     </div>
                 </div>
@@ -152,7 +157,7 @@
                             </div>
                             <div class="mb-4">
                                 <label for="inputImage" class="form-label fw-bold">Image</label>
-                                <input type="file" class="form-control" id="inputGroupFile02" name="photo" [(ngModel)]="photo">
+                                <input type="text" class="form-control" id="inputImage" name="photo" [(ngModel)]="photo">
                             </div>
                             <div class="mb-4">
                                 <label for="inputDescription" class="form-label fw-bold">Description</label>
@@ -163,7 +168,7 @@
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn-ajoutProjet m-0 m-auto " data-bs-dismiss="modal" (click)="ajoutProjet()">Ajouter</button>
+                        <button type="button" class="btn-ajoutProjet m-0 m-auto " data-bs-dismiss="modal" (click)="addProjet()">Ajouter</button>
                     </div>
                 </div>
             </div>
@@ -171,34 +176,92 @@
 
         <!-- Modal detail -->
         <div class="modal  modal-lg" tabindex="-1" id="modalDetailProjet">
-            <div class="modal-dialog" *ngFor="let projet of projets">
+            <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header border-0 ">
                         <h5 class="modal-title col-12 text-center ">Detail d'un projet</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div class="modal-body">
-                        <div class="card mb-3" >
-                            <div class="row g-0">
+                    <div class="modal-body" >
+                        <div class="card mb-3" *ngIf="selectedProjet">
+                            <div class="row g-0" >
                                 <div class="col-md-4">
-                                    <img src="https://img.freepik.com/photos-gratuite/smiley-femme-tir-complet-tenant-tablette_23-2149894712.jpg?w=826&t=st=1702048215~exp=1702048815~hmac=84dff7f194e8470ff50507ce6955c4790194781ff5ce3a5053b62299dde10d6e" class="img-fluid rounded-start" alt="...">
+                                    <img [src]=selectedProjet.photo class="img-fluid rounded-start" alt="...">
                                 </div>
-                                <div class="col-md-8">
+                                <div class="col-md-8" >
                                     <div class="card-body">
-                                        <h6 class="fw-bold ">Titre:{{projetDetail?.nom}}</h6>
-                                        <h6 class="fw-bold ">categorie:{{projetDetail?.categorie}}</h6>
-                                        <h6 class="fw-bold ">Duree:{{projetDetail?.echeance}}</h6>
-                                        <h6 class="fw-bold ">cout:{{projetDetail?.budget}}</h6>
+                                        <h6 class="fw-bold ">Titre:{{selectedProjet.nom}}</h6>
+                                        <h6 class="fw-bold ">categorie:{{selectedProjet.categorie}}</h6>
+                                        <h6 class="fw-bold ">Duree:{{selectedProjet.echeance}}</h6>
+                                        <h6 class="fw-bold ">cout:{{selectedProjet.budget}}</h6>
                                         <h6 class="fw-bold ">Description:</h6>
-                                        <p class="card-text">{{projetDetail?.description}}</p>
+                                        <p class="card-text">{{selectedProjet.description}}</p>
                                         <p class="card-text">
-                                            <button class="btn btn-modif ">Modifier</button>
+                                            <button class="btn btn-modif" data-bs-toggle="modal" data-bs-target="#modalModifierProjet"  >Modifier</button>
                                             <button class="btn btn-sup ms-2">Supprimer</button>
                                         </p>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Modal pour modifier un projet -->
+        <div class="modal" tabindex="-1" id="modalModifierProjet">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title col-12 text-center">Modifier un projet</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form" (submit)=" updateProjet()">
+                            <div class="mb-4">
+                                <label for="inputLibelle" class="form-label fw-bold">Libelle</label>
+                                <input type="text" name="nom" class="form-control" id="inputlibelle"
+                                    placeholder="Entrez le libelle" [(ngModel)]="editedProjet.nom">
+                            </div>
+                            <div class="mb-4">
+                                <label for="inputLibelle" class="form-label fw-bold">Categorie</label>
+                                <select class="form-select" aria-label="Default select example" name="categorie"
+                                    [(ngModel)]="editedProjet.categorie">
+                                    <option selected>Vous etes ...</option>
+                                    <option value="organisme">organisme</option>
+                                    <option value="ONG">ONG</option>
+                                    <option value="particulier">particulier</option>
+                                </select>
+                            </div>
+                            <div class="mb-4">
+                                <label for="inputDuree" class="form-label fw-bold">Duree</label>
+                                <input type="text" name="echeance" class="form-control" id="echeance"
+                                    placeholder="Entrez la duree" [(ngModel)]="editedProjet.echeance">
+                            </div>
+                            <div class="mb-4">
+                                <label for="inputCout" class="form-label fw-bold">Cout</label>
+                                <input type="text" name="budget" class="form-control" id="inputCout"
+                                    placeholder="Entrez le cout" [(ngModel)]="editedProjet.budget">
+                            </div>
+                            <div class="mb-4">
+                                <label for="inputImage" class="form-label fw-bold">Image</label>
+                                <input type="text" name="photo" class="form-control" id="inputImage" placeholder="Entrez le cout" name="photo"
+                                    [(ngModel)]="editedProjet.photo">
+                               
+                            </div>
+                            <div class="mb-4">
+                                <label for="inputDescription" class="form-label fw-bold">Description</label>
+                                <div class="form-floating">
+                                    <textarea class="form-control" placeholder="description" name="description" id="description"
+                                        [(ngModel)]="editedProjet.description"></textarea>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn-ajoutProjet m-0 m-auto " data-bs-dismiss="modal" (click)="updateProjet()">Modifier</button>
                     </div>
                 </div>
             </div>

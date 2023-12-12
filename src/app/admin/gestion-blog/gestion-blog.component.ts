@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component  } from '@angular/core';
 import { Article } from 'src/app/Models/article.model';
 import { ActivatedRoute } from '@angular/router';
 import { ArticleService } from 'src/app/services/article.service';
@@ -92,9 +92,9 @@ export class GestionBlogComponent {
   loadArticles() {
       this.articleService.getArticles().subscribe((data) => {
       this.articles = data;
+      
     });
   }
-
 
   // Méthode pour ajouter un article
   addArticle() {
@@ -116,10 +116,19 @@ export class GestionBlogComponent {
 
       this.articleService.addArticle(newArticle).subscribe(() => {
         this.articles.unshift(newArticle);
+        document.getElementById("close-modal")?.click()
         this.alertMessage("success","Bravo!","Article ajouté avec succés");
         this.loadArticles();
+        
+      // Réinitialiser les champs après l'ajout
+      this.titreArticle = "";
+      this.articlePhoto = "";
+      this.descriptionArticle = "";
+
       });
+      
     }
+    
 
   }
 

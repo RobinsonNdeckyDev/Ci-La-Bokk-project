@@ -11,6 +11,12 @@ import Swal from 'sweetalert2';
 })
 export class GestionBlogComponent {
 
+  constructor(private articleService: ArticleService, private route: ActivatedRoute) {}
+
+  ngOnInit(): void {
+    this.loadArticles();
+  }
+
   // attributs
   titreArticle: string = "";
   articlePhoto: string = "";
@@ -38,12 +44,7 @@ export class GestionBlogComponent {
   itemsPerPage: number = 6;
   currentPage: number = 1;
 
-  constructor(private articleService: ArticleService, private route: ActivatedRoute) {}
-
-  ngOnInit(): void {
-    this.loadArticles();
-  }
-
+  
   //methode qui permet de faire la recherche
   articleFound() {
     if (this.searchArticle.trim() === '') {

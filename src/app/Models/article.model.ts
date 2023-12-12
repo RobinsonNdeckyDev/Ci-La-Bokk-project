@@ -1,6 +1,6 @@
 export interface Article {
   id?: number;
-  titreArticle: string;
-  articlePhoto: string;
-  descriptionArticle: string;
+  titre: string;
+  description: string;
+  photo: string;
 }

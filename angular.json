@@ -75,7 +75,8 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ci-la-bokk:build"
+            "browserTarget": "ci-la-bokk:build",
+            "proxyConfig": "src/proxy.conf.json"
           }
         },
         "test": {

@@ -13,7 +13,6 @@ import { ConditionUtilisationComponent } from './pages/condition-utilisation/con
 import { PolitiqueConfidentialiteComponent } from './pages/politique-confidentialite/politique-confidentialite.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { LoginComponent } from './authentification/login/login.component';
 import { ProfilBailleurComponent } from './bailleur/profil-bailleur/profil-bailleur.component';
 import { ProfilPorteurComponent } from './porteur-projet/profil-porteur/profil-porteur.component';
 import { AjoutProjetComponent } from './porteur-projet/ajout-projet/ajout-projet.component';
@@ -30,6 +29,9 @@ import { ListeInvestissementBailleurComponent } from './bailleur/liste-investiss
 import { ListeProjetsBailleurComponent } from './bailleur/liste-projets-bailleur/liste-projets-bailleur.component';
 import { InvestissementPorteurComponent } from './porteur-projet/investissement-porteur/investissement-porteur.component';
 import { ProfilAdminComponent } from './admin/profil-admin/profil-admin.component';
+import { LoginComponent } from './auth/login/login.component';
+import { InscriptionBailleurComponent } from './auth/inscription-bailleur/inscription-bailleur.component';
+import { InscriptionPorteurComponent } from './auth/inscription-porteur/inscription-porteur.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,6 @@ import { ProfilAdminComponent } from './admin/profil-admin/profil-admin.componen
     PolitiqueConfidentialiteComponent,
     HeaderComponent,
     FooterComponent,
-    LoginComponent,
     ProfilBailleurComponent,
     ProfilPorteurComponent,
     AjoutProjetComponent,
@@ -58,7 +59,10 @@ import { ProfilAdminComponent } from './admin/profil-admin/profil-admin.componen
     ListeInvestissementBailleurComponent,
     ListeProjetsBailleurComponent,
     InvestissementPorteurComponent,
-    ProfilAdminComponent
+    ProfilAdminComponent,
+    LoginComponent,
+    InscriptionBailleurComponent,
+    InscriptionPorteurComponent,
   ],
   imports: [
     BrowserModule,

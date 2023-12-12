@@ -1,11 +1,19 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap'); */
 
 * {
-    
+
+
+    box-sizing: border-box;
+
+}
+
+.side-menu {
+
     box-sizing: border-box;
     
 }
 .side-menu{
+
     margin: 0;
     padding: 0;
 }
@@ -35,10 +43,16 @@ li {
     --light-orange: #FFE0D3;
 }
 
+
+html {
+    overflow-x: hidden;
+}
+
+=======
     html {
         overflow-x: hidden;
     }
-   
+
 
 
 /* SIDEBAR */
@@ -595,7 +609,7 @@ li {
     #content nav .nav-link {
         display: none;
     }
-    
+
 }
 
 
@@ -649,7 +663,7 @@ li {
     #content main .table-data .todo .todo-list {
         min-width: 420px;
     }
-        
+
 }
 
 #btn-ajout {
@@ -721,29 +735,10 @@ li {
     border-radius: 10px;
     width: 35%;
 }
+
+
 .btn-ajoutProjet{
-    border: 0;
-    background-color: #E75761;
-    color: white;
-    border-radius: 5px;
-    width: 20%;
-    padding: 4px;
-}
-.form input,textarea {
-    border: 1px solid #E75761;
-}
-.form input::placeholder{
-    color: rgb(220, 220, 220);
-}
-.btn-modif{
-    border: 0;
-    background-color: #308AA7;
-    color: white;
-    border-radius: 5px;
-    width: 20%;
-    padding: 4px;
-}
-.btn-sup{
+
     border: 0;
     background-color: #E75761;
     color: white;
@@ -752,7 +747,50 @@ li {
     padding: 4px;
 }
 
+
+.form input,
+textarea {
+    border: 1px solid #E75761;
+}
+
+.form input::placeholder {
+    color: rgb(220, 220, 220);
+}
+
+.btn-modif {
+
+.form input,textarea {
+    border: 1px solid #E75761;
+}
+.form input::placeholder{
+    color: rgb(220, 220, 220);
+}
+.btn-modif{
+
+    border: 0;
+    background-color: #308AA7;
+    color: white;
+    border-radius: 5px;
+    width: 20%;
+    padding: 4px;
+}
+
+
+.btn-sup {
+
+.btn-sup{
+
+    border: 0;
+    background-color: #E75761;
+    color: white;
+    border-radius: 5px;
+    width: 20%;
+    padding: 4px;
+}
+
+
 @media screen and (max-width: 768px){
+
     .contain-card {
         display: grid;
         grid-template-columns: 2fr;
@@ -767,6 +805,24 @@ li {
         gap: 10px;
     }
 }
+
+
+/* stylisation CartesProjets */
+#cardProjetContain {
+    border-radius: 25px;
+    border: 1px solid #E75761;
+    ;
+    padding: 20px;
+}
+
+#cardProjetContain img {
+    border-radius: 25px;
+}
+
+#cartpojet {
+    border: none;
+}
+=======
 /* stylisation CartesProjets */
 #cardProjetContain{
     border-radius: 25px;
@@ -779,3 +835,4 @@ li {
 #cartpojet{
     border: none;
 }
+

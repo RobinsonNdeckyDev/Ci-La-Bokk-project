@@ -70,7 +70,7 @@ import { InscriptionPorteurComponent } from './auth/inscription-porteur/inscript
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [], 
   bootstrap: [AppComponent]
 })
 export class AppModule { }
